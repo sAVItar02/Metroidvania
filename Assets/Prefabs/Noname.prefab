@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1678822424
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678822425}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1678822425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678822424}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.243, y: 0.828, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8626677462030336146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2079805928
 GameObject:
   m_ObjectHideFlags: 0
@@ -46,6 +76,8 @@ GameObject:
   - component: {fileID: 8626677463167453108}
   - component: {fileID: 2034282541}
   - component: {fileID: 5473523056609539969}
+  - component: {fileID: 2034282549}
+  - component: {fileID: 769947659}
   m_Layer: 0
   m_Name: Noname
   m_TagString: Player
@@ -65,6 +97,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2079805929}
+  - {fileID: 1678822425}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -169,10 +202,10 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
+  m_GravityScale: 2
+  m_Material: {fileID: 6200000, guid: fca5917925b9c1443b66e848dbcbed84, type: 2}
+  m_Interpolate: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &8626677463167453108
@@ -218,9 +251,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
-  jumpForce: 5
-  slideSpeed: 5
+  jumpForce: 10
+  slideSpeed: -1
+  slideAnimation: {fileID: 7400000, guid: bd6fb9b284d6e4740bd5aff8b767fd25, type: 2}
+  rollSpeed: 10
+  startRollTime: 0.1
   isRunning: 0
+  coyoteTime: 0.1
+  coyoteTimeCounter: 0
+  jumpBufferTime: 0.2
+  jumpBufferCounter: 0
 --- !u!114 &5473523056609539969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,5 +277,37 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isOnGround: 0
-  collisionRadius: 0.25
+  isTouchingWall: 0
+  collisionRadius: 0.1
   groundCheck: {fileID: 2079805929}
+  wallCollisionRadius: 0.1
+  wallCheck: {fileID: 1678822425}
+--- !u!114 &2034282549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626677462030336175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c8c7181b6064b4c8a556a6120aab37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 5
+  lowJumpMulitplier: 5
+--- !u!111 &769947659
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626677462030336175}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: bd6fb9b284d6e4740bd5aff8b767fd25, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
