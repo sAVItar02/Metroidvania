@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [Header("Jump and Move")]
     [SerializeField] float speed = 10f;
     [SerializeField] float jumpForce = 20f;
+
+    [Space]
+    [Header("Rolling")]
     [SerializeField] float rollSpeed = 10f;
     float rollTime;
     [SerializeField] float startRollTime;
@@ -38,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        playerRigidbody = GetComponent<Rigidbody2D>();
+        playerRigidbody = GetComponent<Rigidbody2D>(); 
         playerAnimator = GetComponent<Animator>();
         coll = GetComponent<PlayerCollision>();
         rollTime = startRollTime;
@@ -60,25 +63,25 @@ public class PlayerController : MonoBehaviour
         moveInput = value.Get<Vector2>();
     }
 
- /*   void HandleRoll()
+  /*  void HandleRoll()
     {
-         if(Input.GetKeyDown(KeyCode.LeftControl) ||  Input.GetKeyDown(KeyCode.RightControl))
-         {
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+        {
             bool isFacingRight = playerRigidbody.transform.localScale.x == 1 ? true : false;
             if (isFacingRight)
             {
-                //playerRigidbody.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
+                playerRigidbody.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
                 playerAnimator.SetTrigger("Roll");
-                playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + rollSpeed, playerRigidbody.velocity.y);
+                //playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + rollSpeed, playerRigidbody.velocity.y);
             }
             else
             {
                 playerRigidbody.velocity += Vector2.left * rollSpeed;
                 playerAnimator.SetTrigger("Roll");
-            }            
-         }
-    }
-*/
+            }
+        }
+    }*/
+
     void HandleJump()
     {
         //Handle Coyote Time
@@ -125,6 +128,7 @@ public class PlayerController : MonoBehaviour
 
     void HandleWallSlide()
     {
+        //Handle wall slide
         if(coll.isTouchingWall && !coll.isOnGround && playerRigidbody.velocity.y < 0 && moveInput.x != 0)
         {
             isWallSliding = true;
@@ -136,6 +140,7 @@ public class PlayerController : MonoBehaviour
             playerAnimator.SetTrigger("isWallSliding");
         }
 
+        //Handle wall jump
         if(Input.GetButtonDown("Jump") && isWallSliding)
         {
             isWallJumping = true;
