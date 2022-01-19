@@ -5059,8 +5059,8 @@ MonoBehaviour:
   rollSpeed: 10
   startRollTime: 0.1
   slideSpeed: -1
-  xWallForce: 5
-  yWallForce: 5
+  xWallForce: 10
+  yWallForce: 10
   wallJumpTime: 0.2
   isRunning: 0
   isWallJumping: 0
