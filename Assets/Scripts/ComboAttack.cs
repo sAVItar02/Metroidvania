@@ -8,6 +8,13 @@ public class ComboAttack : MonoBehaviour
     [SerializeField] int noOfClicks = 0;
     [SerializeField] float maxComboDelay = 0.9f;
     float lastClickedTime = 0f;
+
+    [Space]
+    [Header("Attack Params")]
+    [SerializeField] int attackDamage = 20;
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] LayerMask enemyLayer;
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
@@ -32,6 +39,19 @@ public class ComboAttack : MonoBehaviour
         }
     }
 
+    public void Attack()
+    {
+        //Check for enemies
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+        //Damage Enemies
+        foreach(Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<BanditBehaviour>().TakeDamage(attackDamage);
+        }
+    }
+
+    //Animation Event Functions
     public void return1()
     {
         if(noOfClicks >= 2)
@@ -65,5 +85,9 @@ public class ComboAttack : MonoBehaviour
         noOfClicks = 0;
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
-    private Vector2 moveInput;
+    private float moveInput;
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
     private PlayerCollision coll;
@@ -12,6 +12,10 @@ public class PlayerController : MonoBehaviour
     [Header("Jump and Move")]
     [SerializeField] float speed = 10f;
     [SerializeField] float jumpForce = 20f;
+    [SerializeField] float coyoteTime = 0.2f;
+    [SerializeField] float jumpBufferTime = 0.2f;
+    float coyoteTimeCounter;
+    float jumpBufferCounter;
 
     [Space]
     [Header("Rolling")]
@@ -29,15 +33,18 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [Header("Bools")]
-    [SerializeField] bool isRunning;
-    [SerializeField] bool isWallJumping;
-    [SerializeField] bool isWallSliding;
+    bool isRunning;
+    bool isWallJumping;
+    bool isWallSliding;
+    bool wasOnGround;
 
     [Space]
-    [SerializeField] float coyoteTime = 0.2f;
-    [SerializeField] float coyoteTimeCounter;
-    [SerializeField] float jumpBufferTime = 0.2f;
-    [SerializeField] float jumpBufferCounter;
+    [Header("Particles")]
+    [SerializeField] ParticleSystem walkParticles;
+    [SerializeField] ParticleSystem jumpParticles;
+    [SerializeField] ParticleSystem landParticles;
+    [SerializeField] ParticleSystem slideParticles;
+
 
     void Start()
     {
@@ -49,6 +56,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        CheckInput();
         Run();
         FlipSprite();
         //HandleRoll();
@@ -56,23 +64,32 @@ public class PlayerController : MonoBehaviour
         CheckFall();
         CheckJump();
         HandleWallSlide();
+        UpdateAnimations();
+
+        // Play Land Particles
+        if(!wasOnGround && coll.isOnGround)
+        {
+            playLandParticles();
+        }
+
+        wasOnGround = coll.isOnGround;
     }
 
-    void OnMove(InputValue value)
+    void CheckInput()
     {
-        moveInput = value.Get<Vector2>();
+        moveInput = Input.GetAxisRaw("Horizontal");
     }
 
-  /*  void HandleRoll()
+   /* void HandleRoll()
     {
-        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isRunning)
         {
             bool isFacingRight = playerRigidbody.transform.localScale.x == 1 ? true : false;
             if (isFacingRight)
             {
-                playerRigidbody.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
+                //playerRigidbody.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
                 playerAnimator.SetTrigger("Roll");
-                //playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + rollSpeed, playerRigidbody.velocity.y);
+                playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x * 12 + rollSpeed, playerRigidbody.velocity.y);
             }
             else
             {
@@ -108,6 +125,7 @@ public class PlayerController : MonoBehaviour
         if (jumpBufferCounter >= 0f && coyoteTimeCounter > 0f)
         {
             playerRigidbody.velocity += Vector2.up * jumpForce;
+            playJumpParticles();
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
             playerAnimator.SetBool("isJumping", true);
@@ -119,7 +137,7 @@ public class PlayerController : MonoBehaviour
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2(moveInput.x * speed, playerRigidbody.velocity.y);
+        Vector2 playerVelocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
         playerRigidbody.velocity = playerVelocity;
 
         isRunning = Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon;
@@ -129,34 +147,41 @@ public class PlayerController : MonoBehaviour
     void HandleWallSlide()
     {
         //Handle wall slide
-        if(coll.isTouchingWall && !coll.isOnGround && playerRigidbody.velocity.y < 0 && moveInput.x != 0)
+        if (coll.isTouchingWall && !coll.isOnGround && playerRigidbody.velocity.y < 0 && moveInput != 0)
         {
             isWallSliding = true;
-        } else { isWallSliding = false; }
+        }
+        else { isWallSliding = false; }
 
-        if(isWallSliding)
+        if (isWallSliding)
         {
             playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, slideSpeed);
             playerAnimator.SetTrigger("isWallSliding");
         }
 
         //Handle wall jump
-        if(Input.GetButtonDown("Jump") && isWallSliding)
+        if (Input.GetButtonDown("Jump") && isWallSliding)
         {
             isWallJumping = true;
             Invoke("SetWallJumpingFalse", wallJumpTime);
         }
 
-        if(isWallJumping)
+        if (isWallJumping)
         {
-            playerRigidbody.velocity = new Vector2(xWallForce * -moveInput.x, yWallForce);
+            playerRigidbody.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
         }
+    }
+
+    private void UpdateAnimations()
+    {
+        playerAnimator.SetBool("isWallSliding", isWallSliding);
+        playerAnimator.SetBool("isRunning", isRunning);
     }
 
     void FlipSprite()
     {
         bool playeHasHorizontalSpeed = Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon;
-        if(playeHasHorizontalSpeed)
+        if (playeHasHorizontalSpeed)
         {
             transform.localScale = new Vector2(Mathf.Sign(playerRigidbody.velocity.x), 1f);
         }
@@ -193,5 +218,28 @@ public class PlayerController : MonoBehaviour
     void SetWallJumpingFalse()
     {
         isWallJumping = false;
+    }
+
+    public void playWalkParticles()
+    {
+        walkParticles.Play();
+    }
+
+    public void playLandParticles()
+    {
+        landParticles.Play();
+    }
+    public void playSlideParticles()
+    {
+        slideParticles.Play();
+    }
+    public void playJumpParticles()
+    {
+        jumpParticles.Play();
+    }
+
+    public void moveOnroll()
+    {
+        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + rollSpeed, playerRigidbody.velocity.y + rollSpeed);
     }
 }
