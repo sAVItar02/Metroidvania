@@ -47,7 +47,7 @@ public class ComboAttack : MonoBehaviour
         //Damage Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<BanditBehaviour>().TakeDamage(attackDamage);
+            enemy.GetComponent<SkellyBehaviour>().TakeDamage(attackDamage);
         }
     }
 

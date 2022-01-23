@@ -5,6 +5,7 @@ using UnityEngine;
 public class SkellyBehaviour : MonoBehaviour
 {
     #region Variables
+    [Header("Attack Params")]
     [SerializeField] float attackDistance;
     [SerializeField] float followSpeed;
     [SerializeField] float timer;
@@ -16,8 +17,13 @@ public class SkellyBehaviour : MonoBehaviour
     [HideInInspector] public bool inRange;
     public GameObject hotZone;
     public GameObject triggerArea;
+    [Space]
+    [Header("Health And Damage Params")]
+    [SerializeField] int maxHealth = 100;
+    [SerializeField] int currentHealth;
 
     private Animator anim;
+    private SpriteRenderer renderer;
     private float distance; //Dist b/w enemy and player
     private bool attackMode;
     private bool cooling;
@@ -26,8 +32,10 @@ public class SkellyBehaviour : MonoBehaviour
 
     private void Awake()
     {
+        currentHealth = maxHealth;
         intTimer = timer;
         anim = GetComponent<Animator>();
+        renderer = GetComponent<SpriteRenderer>();
         SelectTarget();
     }
 
@@ -41,7 +49,7 @@ public class SkellyBehaviour : MonoBehaviour
             Move();
         }
 
-        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("SkellyAttack"))
+        if (!InsideOfLimits() && !inRange && !anim.GetCurrentAnimatorStateInfo(0).IsName("SkellyAttack")) // Check if player is inside of limits
         {
             SelectTarget();
         }
@@ -148,5 +156,40 @@ public class SkellyBehaviour : MonoBehaviour
         }
 
         transform.eulerAngles = rotation;
+    }
+
+    //Attack And Damage Methods
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        anim.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        anim.SetBool("isDead", true);
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+        GetComponent<Collider2D>().enabled = false;
+        StartCoroutine("FadeOut");
+        transform.Find("HotZone").GetComponent<SkellyHotzoneCheck>().enabled = false;
+        transform.Find("TriggerArea").GetComponent<SkellyTriggerAreaCheck>().enabled = false;
+        this.enabled = false;
+    }
+
+    IEnumerator FadeOut()
+    {
+        for(float f = 1f; f >= -0.05f; f -= 0.01f)
+        {
+            Color c = renderer.material.color;
+            c.a = f;
+            renderer.material.color = c;
+            yield return new WaitForSeconds(0.05f);
+        }
+        Destroy(gameObject);
     }
 }

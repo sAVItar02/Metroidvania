@@ -19,26 +19,21 @@ public class SkellyHotzoneCheck : MonoBehaviour
         if (inRange )
         {
             enemyParent.Flip();
-            Debug.Log("Flipped");
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag + collision.gameObject.name + collision.gameObject);
         if(collision.gameObject.CompareTag("Player"))
         {
             inRange = true;
-            Debug.Log("Enter");
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag + collision.gameObject.name + collision.gameObject);
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Exit");
             inRange = false;
             gameObject.SetActive(false);
             enemyParent.triggerArea.SetActive(true);
