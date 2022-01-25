@@ -21,6 +21,7 @@ public class SkellyBehaviour : MonoBehaviour
     [Header("Health And Damage Params")]
     [SerializeField] int maxHealth = 100;
     [SerializeField] int currentHealth;
+    [SerializeField] GameObject damageText;
 
     private Animator anim;
     private SpriteRenderer renderer;
@@ -163,6 +164,10 @@ public class SkellyBehaviour : MonoBehaviour
     {
         currentHealth -= damage;
         anim.SetTrigger("Hurt");
+        if (damageText)
+        {
+            ShowDamageText(damage);
+        }
 
         if (currentHealth <= 0)
         {
@@ -179,6 +184,12 @@ public class SkellyBehaviour : MonoBehaviour
         transform.Find("HotZone").GetComponent<SkellyHotzoneCheck>().enabled = false;
         transform.Find("TriggerArea").GetComponent<SkellyTriggerAreaCheck>().enabled = false;
         this.enabled = false;
+    }
+
+    void ShowDamageText(int damage)
+    {
+        var text = Instantiate(damageText, transform.position, Quaternion.identity, transform);
+        text.GetComponentInChildren<TextMesh>().text = damage.ToString();
     }
 
     IEnumerator FadeOut()

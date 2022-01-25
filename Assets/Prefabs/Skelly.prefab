@@ -165,6 +165,9 @@ MonoBehaviour:
   inRange: 0
   hotZone: {fileID: 4816932056413816358}
   triggerArea: {fileID: 4816932057554051687}
+  maxHealth: 100
+  currentHealth: 0
+  damageText: {fileID: 7156995983203829021, guid: 27fe013e658a2ae4b848d43725287090, type: 3}
 --- !u!1 &4816932056413816358
 GameObject:
   m_ObjectHideFlags: 0

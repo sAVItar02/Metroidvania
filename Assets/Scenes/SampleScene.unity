@@ -478,7 +478,7 @@ Transform:
   - {fileID: 39095795}
   - {fileID: 1062252200}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &172780106
 Rigidbody2D:
@@ -554,6 +554,9 @@ MonoBehaviour:
   inRange: 0
   hotZone: {fileID: 1062252199}
   triggerArea: {fileID: 39095794}
+  maxHealth: 100
+  currentHealth: 0
+  damageText: {fileID: 0}
 --- !u!4 &296401912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8626677462030336146, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
@@ -881,7 +884,7 @@ Transform:
   m_Children:
   - {fileID: 1786701791}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1786701790
 GameObject:
@@ -5714,7 +5717,7 @@ PrefabInstance:
       objectReference: {fileID: 1271682051}
     - target: {fileID: 4816932056306753382, guid: fce5f943a01b16f4da140184dc968803, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4816932056306753382, guid: fce5f943a01b16f4da140184dc968803, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5759,10 +5762,6 @@ PrefabInstance:
     - target: {fileID: 4816932056306753385, guid: fce5f943a01b16f4da140184dc968803, type: 3}
       propertyPath: m_Name
       value: Skelly
-      objectReference: {fileID: 0}
-    - target: {fileID: 4816932057554051687, guid: fce5f943a01b16f4da140184dc968803, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fce5f943a01b16f4da140184dc968803, type: 3}
