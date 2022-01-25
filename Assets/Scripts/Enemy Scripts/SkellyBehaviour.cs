@@ -178,6 +178,7 @@ public class SkellyBehaviour : MonoBehaviour
     void Die()
     {
         anim.SetBool("isDead", true);
+        CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
         GetComponent<Collider2D>().enabled = false;
         StartCoroutine("FadeOut");
@@ -189,7 +190,15 @@ public class SkellyBehaviour : MonoBehaviour
     void ShowDamageText(int damage)
     {
         var text = Instantiate(damageText, transform.position, Quaternion.identity, transform);
-        text.GetComponentInChildren<TextMesh>().text = damage.ToString();
+        var textChild = text.GetComponentInChildren<TextMesh>();
+        textChild.text = damage.ToString();
+        if(damage > 25)
+        {
+            Vector3 scale = new Vector3(0.06f, 0.06f, 0.06f);
+            textChild.color = Color.red;
+            textChild.transform.localScale = scale;
+            CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
+        }
     }
 
     IEnumerator FadeOut()

@@ -11,7 +11,10 @@ public class ComboAttack : MonoBehaviour
 
     [Space]
     [Header("Attack Params")]
-    [SerializeField] int attackDamage = 20;
+    [SerializeField] int damageToDeal = 20;
+    [SerializeField] int critChance = 10;
+    [SerializeField] int maxCritDamage = 40;
+    [SerializeField] int minCritDamage = 35;
     [SerializeField] Transform attackPoint;
     [SerializeField] float attackRange = 0.5f;
     [SerializeField] LayerMask enemyLayer;
@@ -43,11 +46,20 @@ public class ComboAttack : MonoBehaviour
     {
         //Check for enemies
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+        damageToDeal = 20;
+        int damageDecider = Random.Range(1, 100);
+        if(damageDecider > (100-critChance) && damageDecider <= 100)
+        {
+            damageToDeal = Random.Range(minCritDamage, maxCritDamage);
+        } else
+        {
+            damageToDeal = Random.Range(19, 24);
+        }
 
         //Damage Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<SkellyBehaviour>().TakeDamage(attackDamage);
+            enemy.GetComponent<SkellyBehaviour>().TakeDamage(damageToDeal);
         }
     }
 

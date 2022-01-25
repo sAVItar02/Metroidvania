@@ -19649,7 +19649,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noOfClicks: 0
   maxComboDelay: 0.9
-  attackDamage: 20
+  damageToDeal: 20
+  critChance: 10
+  maxCritDamage: 40
+  minCritDamage: 35
   attackPoint: {fileID: 802738129}
   attackRange: 0.5
   enemyLayer:
