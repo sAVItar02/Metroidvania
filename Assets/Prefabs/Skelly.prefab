@@ -468,7 +468,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -238066447
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -551,16 +551,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackDistance: 2
   followSpeed: 2
-  timer: 1
+  timer: 1.5
   leftLimit: {fileID: 0}
   rightLimit: {fileID: 0}
   target: {fileID: 0}
   inRange: 0
   hotZone: {fileID: 4816932056413816358}
   triggerArea: {fileID: 4816932057554051687}
-  maxHealth: 1000
+  maxHealth: 100
   currentHealth: 0
   damageText: {fileID: 7156995983203829021, guid: 27fe013e658a2ae4b848d43725287090, type: 3}
+  _coin: {fileID: 7955327180840188271, guid: 9e09701068ef6644d94af80420e0eb02, type: 3}
+  _healthPotion: {fileID: 1691305279757313810, guid: 41a96a68f744e5c4ca4a9a15aa292644, type: 3}
+  healthPotionProb: 10
+  isAttacking: 0
 --- !u!1 &4816932056413816358
 GameObject:
   m_ObjectHideFlags: 0

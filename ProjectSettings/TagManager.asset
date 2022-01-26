@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Coin
+  - HeathPotion
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Ground
   - Enemy
   - Player
-  - 
+  - Coin
   - 
   - 
   - 
@@ -43,6 +45,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2276949201
+    locked: 0
+  - name: Interactables
+    uniqueID: 2479288521
     locked: 0
   - name: Enemy
     uniqueID: 4056900849
