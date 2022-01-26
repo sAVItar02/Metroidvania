@@ -25,14 +25,17 @@ public class SkellyBehaviour : MonoBehaviour
 
     private Animator anim;
     private SpriteRenderer renderer;
+    private Rigidbody2D rb;
     private float distance; //Dist b/w enemy and player
     private bool attackMode;
     private bool cooling;
     private float intTimer;
+    public bool isAttacking;
     #endregion
 
     private void Awake()
     {
+        rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
         EnemyHealthBarBehaviour.Instance.SetHealth(currentHealth, maxHealth);
         intTimer = timer;
@@ -84,17 +87,23 @@ public class SkellyBehaviour : MonoBehaviour
 
     void Move()
     {
-        anim.SetBool("canWalk", true);
-        if(!anim.GetCurrentAnimatorStateInfo(0).IsName("SkellyEnemy"))
+        Vector2 targetPosition = new Vector2(target.position.x, transform.position.y); // Position to move to
+        if(isAttacking)
         {
-            Vector2 targetPosition = new Vector2(target.position.x, transform.position.y); // Position to move to
-
-            transform.position = Vector2.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime); // Move Enemy to player position
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, 0 * Time.deltaTime);
+        } else
+        {
+            anim.SetBool("canWalk", true);
+            if(!anim.GetCurrentAnimatorStateInfo(0).IsName("SkellyEnemy"))
+            {
+                transform.position = Vector2.MoveTowards(transform.position, targetPosition, followSpeed * Time.deltaTime); // Move Enemy to player position
+            }
         }
     }
 
     void Attack()
     {
+        isAttacking = true;
         timer = intTimer; // Reset Timer when player enters attack range
         attackMode = true; // Check is enemy can attack
 
@@ -213,5 +222,11 @@ public class SkellyBehaviour : MonoBehaviour
             yield return new WaitForSeconds(0.05f);
         }
         Destroy(gameObject);
+    }
+
+    //Helper Functions
+    public void SetIsAttacking()
+    {
+        isAttacking = false;
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
+    public static PlayerController Instance { get; private set; }
     private float moveInput;
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
@@ -37,6 +38,7 @@ public class PlayerController : MonoBehaviour
     bool isWallJumping;
     bool isWallSliding;
     bool wasOnGround;
+    [HideInInspector] public bool isAttacking;
 
     [Space]
     [Header("Particles")]
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem slideParticles;
 
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>(); 
@@ -137,11 +143,18 @@ public class PlayerController : MonoBehaviour
 
     void Run()
     {
-        Vector2 playerVelocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
-        playerRigidbody.velocity = playerVelocity;
+        if(isAttacking)
+        {
+            playerRigidbody.velocity = new Vector2(moveInput * 0f, playerRigidbody.velocity.y);
+        } else
+        {
+            Vector2 playerVelocity = new Vector2(moveInput * speed, playerRigidbody.velocity.y);
+            playerRigidbody.velocity = playerVelocity;
 
-        isRunning = Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon;
-        playerAnimator.SetBool("isRunning", isRunning);
+            isRunning = Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon;
+            playerAnimator.SetBool("isRunning", isRunning);
+        }
+        
     }
 
     void HandleWallSlide()

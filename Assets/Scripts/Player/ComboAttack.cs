@@ -44,6 +44,7 @@ public class ComboAttack : MonoBehaviour
 
     public void Attack()
     {
+        PlayerController.Instance.isAttacking = true;
         //Check for enemies
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         damageToDeal = 20;
@@ -69,8 +70,10 @@ public class ComboAttack : MonoBehaviour
         if(noOfClicks >= 2)
         {
             playerAnimator.SetBool("Attack2", true);
+            PlayerController.Instance.isAttacking = true;
         } else
         {
+            PlayerController.Instance.isAttacking = false;
             playerAnimator.SetBool("Attack1", false);
             noOfClicks = 0;
         }
@@ -81,9 +84,11 @@ public class ComboAttack : MonoBehaviour
         if (noOfClicks >= 3)
         {
             playerAnimator.SetBool("Attack3", true);
+            PlayerController.Instance.isAttacking = true;
         }
         else
         {
+            PlayerController.Instance.isAttacking = false;
             playerAnimator.SetBool("Attack2", false);
             noOfClicks = 0;
         }
@@ -91,6 +96,7 @@ public class ComboAttack : MonoBehaviour
 
     public void return3()
     {
+        PlayerController.Instance.isAttacking = false;
         playerAnimator.SetBool("Attack1", false);
         playerAnimator.SetBool("Attack2", false);
         playerAnimator.SetBool("Attack3", false);
