@@ -34,6 +34,7 @@ public class SkellyBehaviour : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        EnemyHealthBarBehaviour.Instance.SetHealth(currentHealth, maxHealth);
         intTimer = timer;
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
@@ -163,6 +164,7 @@ public class SkellyBehaviour : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        EnemyHealthBarBehaviour.Instance.SetHealth(currentHealth, maxHealth);
         anim.SetTrigger("Hurt");
         if (damageText)
         {
