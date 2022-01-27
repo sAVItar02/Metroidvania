@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
     bool isWallJumping;
     bool isWallSliding;
     bool wasOnGround;
+    bool isFacingRight = true;
     [HideInInspector] public bool isAttacking;
 
     [Space]
@@ -64,13 +65,21 @@ public class PlayerController : MonoBehaviour
     {
         CheckInput();
         Run();
-        FlipSprite();
+        //FlipSprite();
         //HandleRoll();
         HandleJump();
         CheckFall();
         CheckJump();
         HandleWallSlide();
         UpdateAnimations();
+
+        if(moveInput < 0 && isFacingRight)
+        {
+            FlipSprite();
+        } else if( moveInput > 0 && !isFacingRight)
+        {
+            FlipSprite();
+        }
 
         // Play Land Particles
         if(!wasOnGround && coll.isOnGround)
@@ -193,11 +202,8 @@ public class PlayerController : MonoBehaviour
 
     void FlipSprite()
     {
-        bool playeHasHorizontalSpeed = Mathf.Abs(playerRigidbody.velocity.x) > Mathf.Epsilon;
-        if (playeHasHorizontalSpeed)
-        {
-            transform.localScale = new Vector2(Mathf.Sign(playerRigidbody.velocity.x), 1f);
-        }
+        isFacingRight = !isFacingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     //Handle Jump Anim
@@ -228,6 +234,10 @@ public class PlayerController : MonoBehaviour
     }
 
     //Helper Functions
+    public bool CanAttack()
+    {
+        return (moveInput == 0 && coll.isOnGround && !isWallSliding && !isWallJumping);
+    }
     void SetWallJumpingFalse()
     {
         isWallJumping = false;

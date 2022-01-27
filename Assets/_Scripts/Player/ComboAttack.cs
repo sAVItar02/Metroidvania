@@ -16,11 +16,19 @@ public class ComboAttack : MonoBehaviour
     [SerializeField] int maxCritDamage = 40;
     [SerializeField] int minCritDamage = 35;
     [SerializeField] Transform attackPoint;
+    public bool canUseSecondary = true;
     [SerializeField] float attackRange = 0.5f;
+    [SerializeField] float secondaryAttkTimeDelay = 5f;
+    float secondaryAttkTimer;
     [SerializeField] LayerMask enemyLayer;
+    [Space]
+    [Header("Secondary Attack")]
+    [SerializeField] GameObject fireball;
+    [SerializeField] Transform firePoint;
     void Start()
     {
         playerAnimator = GetComponent<Animator>();
+        secondaryAttkTimer = secondaryAttkTimeDelay;
     }
     void Update()
     {
@@ -39,6 +47,19 @@ public class ComboAttack : MonoBehaviour
                 playerAnimator.SetBool("Attack1", true);
             }
             noOfClicks = Mathf.Clamp(noOfClicks, 0, 3);
+        }
+
+        if(Input.GetMouseButtonDown(1) && canUseSecondary)
+        {
+            playerAnimator.SetTrigger("activateSecondary");
+            PlayerController.Instance.isAttacking = true;
+            canUseSecondary = false;
+            secondaryAttkTimer = secondaryAttkTimeDelay;
+        }
+        secondaryAttkTimer -= Time.deltaTime;
+        if(secondaryAttkTimer <= 0)
+        {
+            canUseSecondary = true;
         }
     }
 
@@ -62,6 +83,11 @@ public class ComboAttack : MonoBehaviour
         {
             enemy.GetComponent<SkellyBehaviour>().TakeDamage(damageToDeal);
         }
+    }
+
+    public void SecondaryAttack()
+    {
+        Instantiate(fireball, firePoint.position, firePoint.rotation);
     }
 
     //Animation Event Functions
