@@ -155,4 +155,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireballSpeed: 10
+  fireballDamage: 100
   impactEffect: {fileID: 972316960273672013, guid: 2277db80be7ce274ebbdb96df525fb44, type: 3}
+  lifetime: 0

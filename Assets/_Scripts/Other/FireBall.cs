@@ -7,6 +7,7 @@ public class FireBall : MonoBehaviour
     private Rigidbody2D rb;
 
     [SerializeField] float fireballSpeed;
+    [SerializeField] int fireballDamage;
     [SerializeField] GameObject impactEffect;
     [SerializeField] float lifetime;
     // Start is called before the first frame update
@@ -29,7 +30,7 @@ public class FireBall : MonoBehaviour
         Destroy(gameObject);
         if(collision.CompareTag("Enemy"))
         {
-            collision.GetComponent<SkellyBehaviour>().TakeDamage(50);
+            collision.GetComponent<SkellyBehaviour>().TakeDamage(fireballDamage);
         }
     }
 }

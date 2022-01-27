@@ -18,7 +18,7 @@ public class ComboAttack : MonoBehaviour
     [SerializeField] Transform attackPoint;
     public bool canUseSecondary = true;
     [SerializeField] float attackRange = 0.5f;
-    [SerializeField] float secondaryAttkTimeDelay = 5f;
+    [SerializeField] public float secondaryAttkTimeDelay = 5f;
     float secondaryAttkTimer;
     [SerializeField] LayerMask enemyLayer;
     [Space]
