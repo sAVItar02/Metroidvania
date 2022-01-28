@@ -275,6 +275,36 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1417511792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1417511793}
+  m_Layer: 7
+  m_Name: AttackPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1417511793
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1417511792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.01, y: 0.33, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4816932056306753382}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1552950328
 GameObject:
   m_ObjectHideFlags: 0
@@ -427,6 +457,7 @@ Transform:
   - {fileID: 4816932057554051686}
   - {fileID: 4816932056413816357}
   - {fileID: 1552950329}
+  - {fileID: 1417511793}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -564,6 +595,11 @@ MonoBehaviour:
   _coin: {fileID: 7955327180840188271, guid: 9e09701068ef6644d94af80420e0eb02, type: 3}
   _healthPotion: {fileID: 1691305279757313810, guid: 41a96a68f744e5c4ca4a9a15aa292644, type: 3}
   healthPotionProb: 10
+  attackPoint: {fileID: 1417511793}
+  attackRange: 0.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 256
   isAttacking: 0
 --- !u!1 &4816932056413816358
 GameObject:

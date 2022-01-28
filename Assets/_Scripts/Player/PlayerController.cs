@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
+    #region Variables
     public static PlayerController Instance { get; private set; }
     private float moveInput;
     private Rigidbody2D playerRigidbody;
@@ -30,6 +31,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float xWallForce;
     [SerializeField] float yWallForce;
     [SerializeField] float wallJumpTime;
+    [Space]
+    [Header("Health Params")]
+    [SerializeField] int maxHealth = 100;
+    [SerializeField] int currentHealth;
 
 
     [Space]
@@ -39,6 +44,7 @@ public class PlayerController : MonoBehaviour
     bool isWallSliding;
     bool wasOnGround;
     bool isFacingRight = true;
+    public bool isDead = false;
     [HideInInspector] public bool isAttacking;
 
     [Space]
@@ -47,18 +53,19 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem jumpParticles;
     [SerializeField] ParticleSystem landParticles;
     [SerializeField] ParticleSystem slideParticles;
+    #endregion
 
 
     private void Awake()
     {
         Instance = this;
-    }
-    void Start()
-    {
-        playerRigidbody = GetComponent<Rigidbody2D>(); 
+        playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         coll = GetComponent<PlayerCollision>();
         rollTime = startRollTime;
+
+        currentHealth = maxHealth;
+        isDead = false;
     }
 
     void Update()
@@ -194,6 +201,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        playerAnimator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        isDead = true;
+        playerAnimator.SetBool("isDead", true);
+        CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
+    }
+
     private void UpdateAnimations()
     {
         playerAnimator.SetBool("isWallSliding", isWallSliding);
@@ -261,8 +286,4 @@ public class PlayerController : MonoBehaviour
         jumpParticles.Play();
     }
 
-    public void moveOnroll()
-    {
-        playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x + rollSpeed, playerRigidbody.velocity.y + rollSpeed);
-    }
 }

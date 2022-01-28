@@ -604,6 +604,11 @@ MonoBehaviour:
   _coin: {fileID: 0}
   _healthPotion: {fileID: 0}
   healthPotionProb: 5
+  attackPoint: {fileID: 0}
+  attackRange: 0.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
   isAttacking: 0
 --- !u!4 &296401912 stripped
 Transform:
@@ -6501,9 +6506,9 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1552950328, guid: fce5f943a01b16f4da140184dc968803, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 1417511793, guid: fce5f943a01b16f4da140184dc968803, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 4816932056306753379, guid: fce5f943a01b16f4da140184dc968803, type: 3}
       propertyPath: leftLimit
@@ -6513,6 +6518,10 @@ PrefabInstance:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 1271682051}
+    - target: {fileID: 4816932056306753379, guid: fce5f943a01b16f4da140184dc968803, type: 3}
+      propertyPath: attackRange
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4816932056306753382, guid: fce5f943a01b16f4da140184dc968803, type: 3}
       propertyPath: m_RootOrder
       value: 2

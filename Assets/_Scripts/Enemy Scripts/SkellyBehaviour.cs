@@ -22,11 +22,17 @@ public class SkellyBehaviour : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] int currentHealth;
     [SerializeField] GameObject damageText;
+    [SerializeField] int damageToDeal = 10;
     [Space]
     [Header("Drops")]
     [SerializeField] GameObject _coin;
     [SerializeField] GameObject _healthPotion;
     [SerializeField] int healthPotionProb = 5;
+    [Space]
+    [Header("Attack Params")]
+    [SerializeField] Transform attackPoint;
+    [SerializeField] float attackRange = 0.5f;
+    [SerializeField] LayerMask playerLayer;
 
     private Animator anim;
     private SpriteRenderer renderer;
@@ -81,7 +87,7 @@ public class SkellyBehaviour : MonoBehaviour
         if(distance > attackDistance)
         {
             StopAttack();
-        } else if(attackDistance > distance && !cooling)
+        } else if(attackDistance > distance && !cooling && !PlayerController.Instance.isDead)
         {
             Attack();
         }
@@ -110,7 +116,7 @@ public class SkellyBehaviour : MonoBehaviour
     }
 
     void Attack()
-    {
+    { 
         isAttacking = true;
         timer = intTimer; // Reset Timer when player enters attack range
         attackMode = true; // Check is enemy can attack
@@ -194,6 +200,15 @@ public class SkellyBehaviour : MonoBehaviour
         }
     }
 
+    public void DealDamage()
+    {
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, playerLayer);
+        foreach (Collider2D player in hitPlayer)
+        {
+            player.GetComponent<PlayerController>().TakeDamage(damageToDeal);
+        }
+    }
+
     void Die()
     {
         //Spawn random drop
@@ -261,5 +276,11 @@ public class SkellyBehaviour : MonoBehaviour
     public void SetIsAttacking()
     {
         isAttacking = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
