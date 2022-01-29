@@ -35,7 +35,7 @@ public class SkellyBehaviour : MonoBehaviour
     [SerializeField] LayerMask playerLayer;
 
     private Animator anim;
-    private SpriteRenderer renderer;
+    private new SpriteRenderer renderer;
     private Rigidbody2D rb;
     private EnemyHealthBarBehaviour enemyHealthBar;
     private float distance; //Dist b/w enemy and player

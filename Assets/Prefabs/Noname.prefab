@@ -20045,6 +20045,9 @@ MonoBehaviour:
   xWallForce: 5
   yWallForce: 10
   wallJumpTime: 0.2
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
   isAttacking: 0
   walkParticles: {fileID: 973838985}
   jumpParticles: {fileID: 2046501760}

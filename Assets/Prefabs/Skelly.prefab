@@ -69,7 +69,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -299,7 +299,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1417511792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.01, y: 0.33, z: 0}
+  m_LocalPosition: {x: 1.41, y: 0.33, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4816932056306753382}
@@ -438,11 +438,11 @@ GameObject:
   - component: {fileID: 4816932056306753379}
   m_Layer: 7
   m_Name: Skelly
-  m_TagString: Enemy
+  m_TagString: Skelly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4816932056306753382
 Transform:
   m_ObjectHideFlags: 0
@@ -592,11 +592,12 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   damageText: {fileID: 7156995983203829021, guid: 27fe013e658a2ae4b848d43725287090, type: 3}
+  damageToDeal: 10
   _coin: {fileID: 7955327180840188271, guid: 9e09701068ef6644d94af80420e0eb02, type: 3}
   _healthPotion: {fileID: 1691305279757313810, guid: 41a96a68f744e5c4ca4a9a15aa292644, type: 3}
   healthPotionProb: 10
   attackPoint: {fileID: 1417511793}
-  attackRange: 0.5
+  attackRange: 0.8
   playerLayer:
     serializedVersion: 2
     m_Bits: 256

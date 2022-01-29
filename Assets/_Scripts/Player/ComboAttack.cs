@@ -56,7 +56,10 @@ public class ComboAttack : MonoBehaviour
             canUseSecondary = false;
             secondaryAttkTimer = secondaryAttkTimeDelay;
         }
-        secondaryAttkTimer -= Time.deltaTime;
+        if(secondaryAttkTimer >= 0)
+        {
+            secondaryAttkTimer -= Time.deltaTime;
+        }
         if(secondaryAttkTimer <= 0)
         {
             canUseSecondary = true;
@@ -81,7 +84,17 @@ public class ComboAttack : MonoBehaviour
         //Damage Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<SkellyBehaviour>().TakeDamage(damageToDeal);
+            switch (enemy.tag)
+            {
+                case "Skelly":
+                    enemy.GetComponent<SkellyBehaviour>().TakeDamage(damageToDeal);
+                    break;
+                case "Slime":
+                    enemy.GetComponent<SlimeBehaviour>().TakeDamage(damageToDeal);
+                    break;
+                    
+            }
+            
         }
     }
 
