@@ -22,7 +22,12 @@ public class SlimeBehaviour : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] int maxHealth = 30;
     [SerializeField] GameObject damageText;
-    
+    [Space]
+    [Header("Collision Params")]
+    [SerializeField] Transform raycastPoint;
+    [SerializeField] float detectionRange = 0.5f;
+    [SerializeField] LayerMask groundLayer;
+
     private float attackTimer;
 
     void Start()
@@ -37,7 +42,7 @@ public class SlimeBehaviour : MonoBehaviour
 
     void Update()
     {
-        if(canMove && !isAttacking)
+        if (canMove && !isAttacking)
         {
             if (IsFacingRight())
             {
@@ -54,6 +59,7 @@ public class SlimeBehaviour : MonoBehaviour
 
         //Attack Stuff
         CanSeePlayer();
+        isCollidingWithWall();
 
         //Timer For Attack
         if (attackTimer >= 0)
@@ -67,15 +73,24 @@ public class SlimeBehaviour : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void isCollidingWithWall()
     {
-        if(collision.CompareTag("Ground"))
+        RaycastHit2D hitForward = Physics2D.Raycast(raycastPoint.transform.position, IsFacingRight()?Vector2.right:Vector2.left, detectionRange, groundLayer);
+        RaycastHit2D hitDown = Physics2D.Raycast(raycastPoint.transform.position, Vector2.down, detectionRange);
+
+        if(hitForward.collider != null)
         {
-            //transform.localScale = new Vector2(-(Mathf.Sign(rb.velocity.x)), transform.localScale.y);
+            if(hitForward.collider.gameObject.CompareTag("Ground"))
+            {
+                transform.Rotate(0f, 180f, 0f);
+            }
+        }
+
+        if (hitDown.collider == false)
+        {
             transform.Rotate(0f, 180f, 0f);
         }
     }
-
     private void CanSeePlayer()
     {
         RaycastHit2D hitRight = Physics2D.Raycast(transform.position, Vector2.right, rayCastRange, playerLayer);
@@ -183,6 +198,8 @@ public class SlimeBehaviour : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
         Gizmos.DrawLine(transform.position, transform.position + Vector3.right * rayCastRange);
         Gizmos.DrawLine(transform.position, transform.position + Vector3.left * rayCastRange);
+        Gizmos.DrawLine(raycastPoint.transform.position, raycastPoint.transform.position + (IsFacingRight() ? Vector3.right : Vector3.left) * detectionRange);
+        Gizmos.DrawLine(raycastPoint.transform.position, raycastPoint.transform.position + Vector3.down * detectionRange);
     }
 
     public void SetIsAttackingFalse()

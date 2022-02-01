@@ -28,6 +28,16 @@ public class FireBall : MonoBehaviour
     {
         Instantiate(impactEffect, transform.position, Quaternion.identity);
         Destroy(gameObject);
+        switch (collision.tag)
+        {
+            case "Skelly":
+                collision.GetComponent<SkellyBehaviour>().TakeDamage(fireballDamage);
+                break;
+            case "Slime":
+                collision.GetComponent<SlimeBehaviour>().TakeDamage(fireballDamage);
+                break;
+        }
+                
         if(collision.CompareTag("Enemy"))
         {
             collision.GetComponent<SkellyBehaviour>().TakeDamage(fireballDamage);

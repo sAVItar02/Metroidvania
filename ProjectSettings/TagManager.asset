@@ -8,6 +8,8 @@ TagManager:
   - HeathPotion
   - Enemy
   - Ground
+  - Skelly
+  - Slime
   layers:
   - Default
   - TransparentFX
