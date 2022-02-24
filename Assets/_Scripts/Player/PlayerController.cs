@@ -214,6 +214,8 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        playerRigidbody.bodyType = RigidbodyType2D.Static;
+        GetComponent<Collider2D>().enabled = false;
         isDead = true;
         playerAnimator.SetBool("isDead", true);
         CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
