@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Skelly
   - Slime
+  - Trap
   layers:
   - Default
   - TransparentFX

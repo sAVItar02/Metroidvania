@@ -9,6 +9,7 @@ public class FireBall : MonoBehaviour
     [SerializeField] float fireballSpeed;
     [SerializeField] int fireballDamage;
     [SerializeField] GameObject impactEffect;
+    [SerializeField] GameObject bloodEffect;
     [SerializeField] float lifetime;
     // Start is called before the first frame update
     void Start()

@@ -70,11 +70,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckInput();
-        Run();
-        //FlipSprite();
-        //HandleRoll();
-        HandleJump();
+        if(!isDead) 
+        { 
+            CheckInput();
+            Run();
+            //FlipSprite();
+            //HandleRoll();
+            HandleJump();
+        }
         CheckFall();
         CheckJump();
         HandleWallSlide();

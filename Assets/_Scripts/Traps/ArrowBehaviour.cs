@@ -7,6 +7,8 @@ public class ArrowBehaviour : MonoBehaviour
     [SerializeField] float lifetime;
     [SerializeField] float arrowSpeed;
     [SerializeField] int arrowDamage = 10;
+    [SerializeField] GameObject impactEffect;
+    [SerializeField] GameObject bloodEffect;
 
     private Rigidbody2D rb;
     void Start()
@@ -26,12 +28,14 @@ public class ArrowBehaviour : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
+            Instantiate(bloodEffect, transform.position, Quaternion.identity);
             collision.GetComponent<PlayerController>().TakeDamage(arrowDamage);
             Destroy(gameObject);
         }
 
         if(collision.CompareTag("Ground"))
         {
+            Instantiate(impactEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
