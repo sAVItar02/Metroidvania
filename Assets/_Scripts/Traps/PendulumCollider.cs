@@ -11,7 +11,7 @@ public class PendulumCollider : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             collision.GetComponent<PlayerController>().TakeDamage(damage);
-            CinemachineShake.Instance.ShakeCamera(3f, 0.1f);
+            CinemachineShake.Instance.ShakeCamera(5f, 0.1f);
         }
     }
 }
