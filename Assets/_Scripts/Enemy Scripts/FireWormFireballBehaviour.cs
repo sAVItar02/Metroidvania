@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : MonoBehaviour
+public class FireWormFireballBehaviour : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     private float timeFromSpawn;
 
     [SerializeField] float fireballSpeed;
@@ -15,6 +16,7 @@ public class FireBall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = transform.right * fireballSpeed;
         timeFromSpawn = 0f;
@@ -28,23 +30,24 @@ public class FireBall : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Instantiate(impactEffect, transform.position, Quaternion.identity);
-        Destroy(gameObject);
-        switch (collision.tag)
+        if (collision.CompareTag("Player"))
         {
-            case "Skelly":
-                collision.GetComponent<SkellyBehaviour>().TakeDamage(fireballDamage);
-                break;
-            case "Slime":
-                collision.GetComponent<SlimeBehaviour>().TakeDamage(fireballDamage);
-                break;
-            case "FireWorm":
-                    break;
+            anim.SetTrigger("didHit");
+            rb.velocity = Vector2.zero;
+            Instantiate(bloodEffect, transform.position, Quaternion.identity);
+            collision.GetComponent<PlayerController>().TakeDamage(fireballDamage);
         }
-                
-        /*if(collision.CompareTag("Enemy"))
+
+        if (collision.CompareTag("Ground"))
         {
-            collision.GetComponent<SkellyBehaviour>().TakeDamage(fireballDamage);
-        }*/
+            anim.SetTrigger("didHit");
+            rb.velocity = Vector2.zero;
+            Instantiate(impactEffect, transform.position, Quaternion.identity);
+        }
+    }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 }

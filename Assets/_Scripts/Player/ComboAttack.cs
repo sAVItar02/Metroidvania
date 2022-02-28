@@ -92,6 +92,9 @@ public class ComboAttack : MonoBehaviour
                 case "Slime":
                     enemy.GetComponent<SlimeBehaviour>().TakeDamage(damageToDeal);
                     break;
+                case "FireWorm":
+                    enemy.GetComponent<SlimeBehaviour>().TakeDamage(damageToDeal);
+                    break;
                     
             }
             

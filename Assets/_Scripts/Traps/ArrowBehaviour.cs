@@ -11,17 +11,18 @@ public class ArrowBehaviour : MonoBehaviour
     [SerializeField] GameObject bloodEffect;
 
     private Rigidbody2D rb;
+    private float timeFromSpawn;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         rb.velocity = -transform.right * arrowSpeed;
-        lifetime = 0f;
+        timeFromSpawn = 0f;
     }
 
     void Update()
     {
-        lifetime += Time.deltaTime;
-        if (lifetime > 5) { Destroy(gameObject); }
+        timeFromSpawn += Time.deltaTime;
+        if (timeFromSpawn > lifetime) { Destroy(gameObject); }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

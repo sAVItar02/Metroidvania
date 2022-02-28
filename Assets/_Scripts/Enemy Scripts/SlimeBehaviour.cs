@@ -22,6 +22,9 @@ public class SlimeBehaviour : MonoBehaviour
     [SerializeField] int currentHealth;
     [SerializeField] int maxHealth = 30;
     [SerializeField] GameObject damageText;
+    [SerializeField] GameObject fireball;
+    [SerializeField] Transform firePoint;
+    [SerializeField] GameObject explodeEffect;
     [Space]
     [Header("Collision Params")]
     [SerializeField] Transform raycastPoint;
@@ -97,6 +100,10 @@ public class SlimeBehaviour : MonoBehaviour
         RaycastHit2D hitLeft = Physics2D.Raycast(transform.position, Vector2.left, rayCastRange, playerLayer);
         if (hitLeft.collider != null || hitRight.collider != null)
         {
+            if((hitLeft.collider != null && IsFacingRight()) || (hitRight.collider != null && !IsFacingRight()))
+            {
+                transform.Rotate(0f, 180f, 0f);
+            }
             if ((hitLeft.distance <= attackRange || hitRight.distance <= attackRange) && !PlayerController.Instance.isDead)
             {
                 Attack();
@@ -139,6 +146,14 @@ public class SlimeBehaviour : MonoBehaviour
             {
                 player.GetComponent<PlayerController>().TakeDamage(damageToDeal);
             }
+        }
+    }
+
+    public void ShootFireBall()
+    {
+        if(!PlayerController.Instance.isDead)
+        {
+            Instantiate(fireball, firePoint.position, firePoint.rotation);
         }
     }
 
@@ -185,7 +200,12 @@ public class SlimeBehaviour : MonoBehaviour
     {
         CinemachineShake.Instance.ShakeCamera(3f, 0.2f);
         Destroy(gameObject);
-    } 
+    }
+    
+    public void SpawnExplodeEffect()
+    {
+        Instantiate(explodeEffect, transform.position, Quaternion.identity);
+    }
     //Helper Functions
     private bool IsFacingRight()
     {

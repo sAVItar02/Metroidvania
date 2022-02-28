@@ -11,6 +11,7 @@ TagManager:
   - Skelly
   - Slime
   - Trap
+  - FireWorm
   layers:
   - Default
   - TransparentFX
