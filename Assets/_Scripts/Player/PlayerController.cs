@@ -53,6 +53,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem jumpParticles;
     [SerializeField] ParticleSystem landParticles;
     [SerializeField] ParticleSystem slideParticles;
+
+    [Space]
+    [Header("Interactables")]
+    [SerializeField] private float boxLength = 1f;
+    [SerializeField] private float boxWidth = 1f;
     #endregion
 
 
@@ -98,6 +103,10 @@ public class PlayerController : MonoBehaviour
         }
 
         wasOnGround = coll.isOnGround;
+
+        //Interaction
+        if (Input.GetKeyDown(KeyCode.E))
+            CheckInteraction();
     }
 
     void CheckInput()
@@ -289,6 +298,31 @@ public class PlayerController : MonoBehaviour
     public void playJumpParticles()
     {
         jumpParticles.Play();
+    }
+
+
+    //---------INTERACTABLES-------------
+    private void CheckInteraction()
+    {
+        RaycastHit2D[] hits = Physics2D.BoxCastAll(new Vector2(transform.position.x, transform.position.y + 0.5f), new Vector2(boxWidth, boxLength), 0, Vector2.zero);
+
+        if(hits.Length > 0)
+        {
+            foreach(RaycastHit2D rc in hits)
+            {
+                if(rc.transform.GetComponent<Interactable>())
+                {
+                    rc.transform.GetComponent<Interactable>().Interact();
+                    return;
+                }
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + 0.5f), new Vector2(boxWidth, boxLength));
     }
 
 }

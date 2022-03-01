@@ -5,8 +5,8 @@ using UnityEngine;
 public class PickupHandler : MonoBehaviour
 {
     #region Variables
-    public enum typeOfPickup { coin, healthPotion }
-    public int healthPotionProb = 5;
+    public enum typeOfPickup { coin, healthPotion, blueGem }
+    //public int healthPotionProb = 5;
 
     [SerializeField] typeOfPickup pickup;
     #endregion
@@ -15,7 +15,7 @@ public class PickupHandler : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (pickup == typeOfPickup.coin)
+            /*if (pickup == typeOfPickup.coin)
             {
                 Debug.Log("Coin picked");
                 Destroy(gameObject);
@@ -23,7 +23,23 @@ public class PickupHandler : MonoBehaviour
             {
                 Debug.Log("Potion picked");
                 Destroy(gameObject);
+            }*/
+
+            switch (pickup) {
+                case typeOfPickup.coin:
+                    Debug.Log("Coin picked");
+                    Destroy(gameObject);
+                    break;
+                case typeOfPickup.healthPotion:
+                    Debug.Log("Potion picked");
+                    Destroy(gameObject);
+                    break;
+                case typeOfPickup.blueGem:
+                    Debug.Log("Blue Gem Picked");
+                    Destroy(gameObject);
+                    break;
             }
+
         }
     }
 }

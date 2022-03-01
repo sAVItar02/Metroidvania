@@ -230,8 +230,8 @@ public class SkellyBehaviour : MonoBehaviour
         int decideDrop = Random.Range(0, 101);
         if(decideDrop > (100- healthPotionProb))
         {
-            var healthPotion = Instantiate(_healthPotion, transform.position, Quaternion.identity);
             Vector2 forceToAdd = new Vector2(Random.Range(-5f, 5f), Random.Range(1f, 8f));
+            var healthPotion = Instantiate(_healthPotion, transform.position, Quaternion.identity);
             healthPotion.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
         } else
         {

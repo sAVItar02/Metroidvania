@@ -20053,6 +20053,8 @@ MonoBehaviour:
   jumpParticles: {fileID: 2046501760}
   landParticles: {fileID: 1984574228}
   slideParticles: {fileID: 6003980}
+  boxLength: 1
+  boxWidth: 3
 --- !u!114 &5473523056609539969
 MonoBehaviour:
   m_ObjectHideFlags: 0
