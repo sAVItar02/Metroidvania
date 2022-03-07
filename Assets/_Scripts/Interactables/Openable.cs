@@ -6,7 +6,7 @@ using UnityEngine;
 public class Openable : Interactable
 {
     private Animator anim;
-    private bool isOpen = false;
+    private bool canBeOpened = true;
     private bool hasBeenOpened = false;
     [SerializeField] bool isGolden = false;
     [SerializeField] GameObject coin;
@@ -20,7 +20,7 @@ public class Openable : Interactable
     }
     public override void Interact()
     {
-        if(isOpen)
+        if(canBeOpened)
         {
             anim.SetBool("isOpen", true);
         } else
@@ -28,26 +28,30 @@ public class Openable : Interactable
             anim.SetBool("isOpen", false);
         }
 
-        isOpen = !isOpen;
+        canBeOpened = !canBeOpened;
     }
 
     public void DropRandomItem()
     {
-        Vector2 forceToAdd = new Vector2(Random.Range(-5f, 5f), Random.Range(1f, 8f));
+        
         if (!hasBeenOpened)
         {
             if(isGolden)
             {
-                Instantiate(blueGem, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity);
-                blueGem.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
+                var _blueGem = Instantiate(blueGem, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity);
+                Vector2 forceToAdd = new Vector2(Random.Range(-5f, 5f), Random.Range(1f, 8f));
+                _blueGem.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
             } else
             {
                 for(int i=0; i<=20; i++)
                 {
-                    Instantiate(coin, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity);
-                    coin.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
+                    var _coin = Instantiate(coin, new Vector3(transform.position.x, transform.position.y + 0.5f, 0), Quaternion.identity);
+                    Vector2 forceToAdd = new Vector2(Random.Range(-5f, 5f), Random.Range(1f, 8f));
+                    _coin.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
                 }
             }
+
+            hasBeenOpened = true;
         }
     } 
 

@@ -277,7 +277,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactIcon: {fileID: 1231978615}
-  isGolden: 0
+  isGolden: 1
   coin: {fileID: 7955327180840188271, guid: 9e09701068ef6644d94af80420e0eb02, type: 3}
   redGem: {fileID: 6618618307758887915, guid: e3cae0d1aa18356488953220d543a904, type: 3}
   blueGem: {fileID: 6618618307758887915, guid: e3cae0d1aa18356488953220d543a904, type: 3}
