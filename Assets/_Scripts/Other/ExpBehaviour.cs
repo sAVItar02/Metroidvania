@@ -10,6 +10,11 @@ public class ExpBehaviour : MonoBehaviour
     [SerializeField] float maxModifier = 11f;
     [SerializeField] float waitTime = 1f;
 
+    private void Start()
+    {
+        waitTime = Random.Range(0.5f, 1f);
+    }
+
     void Update()
     {
         waitTime -= Time.deltaTime;
@@ -17,5 +22,10 @@ public class ExpBehaviour : MonoBehaviour
         {
             transform.position = Vector3.SmoothDamp(transform.position, new Vector3(target.position.x, target.position.y + 0.5f, target.position.z), ref speed, Time.deltaTime * Random.Range(minModifier, maxModifier));        
         }
+    }
+
+    public void StartFollowing()
+    {
+        //
     }
 }

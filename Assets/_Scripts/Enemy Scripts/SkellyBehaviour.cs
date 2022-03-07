@@ -229,7 +229,7 @@ public class SkellyBehaviour : MonoBehaviour
 
     void RandomDrop()
     {
-        int randomExpCount = Random.Range(0, 10);
+        int randomExpCount = Random.Range(3, 8);
         for (int i=0; i<randomExpCount; i++)
         {
             var exp = Instantiate(_exp, new Vector2(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f)), Quaternion.identity);
