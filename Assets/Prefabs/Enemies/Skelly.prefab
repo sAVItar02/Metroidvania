@@ -596,6 +596,7 @@ MonoBehaviour:
   _coin: {fileID: 7955327180840188271, guid: 9e09701068ef6644d94af80420e0eb02, type: 3}
   _healthPotion: {fileID: 1691305279757313810, guid: 41a96a68f744e5c4ca4a9a15aa292644, type: 3}
   healthPotionProb: 10
+  _exp: {fileID: 2977025404942748551, guid: 7015007bc9c041c458a6b11f22ed7fa7, type: 3}
   attackPoint: {fileID: 1417511793}
   attackRange: 0.8
   playerLayer:

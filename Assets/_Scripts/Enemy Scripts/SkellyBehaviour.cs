@@ -28,6 +28,7 @@ public class SkellyBehaviour : MonoBehaviour
     [SerializeField] GameObject _coin;
     [SerializeField] GameObject _healthPotion;
     [SerializeField] int healthPotionProb = 5;
+    [SerializeField] GameObject _exp;
     [Space]
     [Header("Attack Params")]
     [SerializeField] Transform attackPoint;
@@ -43,6 +44,7 @@ public class SkellyBehaviour : MonoBehaviour
     private bool cooling;
     private float intTimer;
     public bool isAttacking;
+    private GameObject expTracker;
     #endregion
 
     private void Awake()
@@ -55,7 +57,7 @@ public class SkellyBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         SelectTarget();
-
+        expTracker = GameObject.FindGameObjectWithTag("Player");
     }
 
 
@@ -227,6 +229,13 @@ public class SkellyBehaviour : MonoBehaviour
 
     void RandomDrop()
     {
+        int randomExpCount = Random.Range(0, 10);
+        for (int i=0; i<randomExpCount; i++)
+        {
+            var exp = Instantiate(_exp, new Vector2(transform.position.x + Random.Range(-1f, 1f), transform.position.y + Random.Range(-1f, 1f)), Quaternion.identity);
+            exp.GetComponent<ExpBehaviour>().target = expTracker.transform;
+        }
+
         int decideDrop = Random.Range(0, 101);
         if(decideDrop > (100- healthPotionProb))
         {
@@ -235,7 +244,7 @@ public class SkellyBehaviour : MonoBehaviour
             healthPotion.GetComponent<Rigidbody2D>().AddForce(forceToAdd, ForceMode2D.Impulse);
         } else
         {
-            int randomCoins = Random.Range(2, 10);
+            int randomCoins = Random.Range(2, 5);
             for (int i = 0; i < randomCoins; i++)
             {
                 var coin = Instantiate(_coin, transform.position, Quaternion.identity);
