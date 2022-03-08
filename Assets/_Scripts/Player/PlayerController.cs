@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private Animator playerAnimator;
     private PlayerCollision coll;
+    private PlayerHealth healthCanvas;
 
     [Header("Jump and Move")]
     [SerializeField] float speed = 10f;
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
         coll = GetComponent<PlayerCollision>();
+        healthCanvas = GetComponent<PlayerHealth>();
         rollTime = startRollTime;
 
         currentHealth = maxHealth;
@@ -217,6 +219,7 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth -= damage;
         playerAnimator.SetTrigger("Hurt");
+        healthCanvas.TakeDamage(damage);
 
         if (currentHealth <= 0)
         {
