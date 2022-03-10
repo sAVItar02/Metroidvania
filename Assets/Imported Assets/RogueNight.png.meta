@@ -1,0 +1,1692 @@
+fileFormatVersion: 2
+guid: 2badf663c7a2e5b4bb16cb1196c13d32
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8667637328629406891
+    second: RogueNight_0
+  - first:
+      213: -6302497832387978983
+    second: RogueNight_1
+  - first:
+      213: 8493970147830062850
+    second: RogueNight_2
+  - first:
+      213: 5845052557759107826
+    second: RogueNight_3
+  - first:
+      213: 5333210352941085763
+    second: RogueNight_4
+  - first:
+      213: -8763654432068480691
+    second: RogueNight_5
+  - first:
+      213: -2835764672496798758
+    second: RogueNight_6
+  - first:
+      213: 5228640876052305262
+    second: RogueNight_7
+  - first:
+      213: -1560335229334962390
+    second: RogueNight_8
+  - first:
+      213: 4009674772644249550
+    second: RogueNight_9
+  - first:
+      213: -6235963376500407426
+    second: RogueNight_10
+  - first:
+      213: -3023028966951818031
+    second: RogueNight_11
+  - first:
+      213: 5140372249388257244
+    second: RogueNight_12
+  - first:
+      213: 2510397102439202712
+    second: RogueNight_13
+  - first:
+      213: 1978018407889118857
+    second: RogueNight_14
+  - first:
+      213: -1562592989491658942
+    second: RogueNight_15
+  - first:
+      213: 6331189829841407337
+    second: RogueNight_16
+  - first:
+      213: 1130585104756114766
+    second: RogueNight_17
+  - first:
+      213: 8318008602078510002
+    second: RogueNight_18
+  - first:
+      213: 8810784778010799740
+    second: RogueNight_19
+  - first:
+      213: -3624700573972700631
+    second: RogueNight_20
+  - first:
+      213: -2446527083957314180
+    second: RogueNight_21
+  - first:
+      213: -243325857262867071
+    second: RogueNight_22
+  - first:
+      213: 8138316728438947488
+    second: RogueNight_23
+  - first:
+      213: -8186810930516925925
+    second: RogueNight_24
+  - first:
+      213: -5327395516063250437
+    second: RogueNight_25
+  - first:
+      213: -4481901980300552390
+    second: RogueNight_26
+  - first:
+      213: 4566061598071890219
+    second: RogueNight_27
+  - first:
+      213: 3902660423132570785
+    second: RogueNight_28
+  - first:
+      213: 2010308255913993493
+    second: RogueNight_29
+  - first:
+      213: 8936865790658548069
+    second: RogueNight_30
+  - first:
+      213: -5330643183279386744
+    second: RogueNight_31
+  - first:
+      213: 5974158154232914942
+    second: RogueNight_32
+  - first:
+      213: 1933206141485524081
+    second: RogueNight_33
+  - first:
+      213: 8747577948038505378
+    second: RogueNight_34
+  - first:
+      213: 3305728395874603846
+    second: RogueNight_35
+  - first:
+      213: 4630421074553853583
+    second: RogueNight_36
+  - first:
+      213: -4616079119050416462
+    second: RogueNight_37
+  - first:
+      213: -7169729291318935785
+    second: RogueNight_38
+  - first:
+      213: 8274442093588541543
+    second: RogueNight_39
+  - first:
+      213: -2298902976969398879
+    second: RogueNight_40
+  - first:
+      213: -2801156076160704656
+    second: RogueNight_41
+  - first:
+      213: 7142183856222314778
+    second: RogueNight_42
+  - first:
+      213: 2518767734864156072
+    second: RogueNight_43
+  - first:
+      213: -4459246341393080615
+    second: RogueNight_44
+  - first:
+      213: 7861274392870258820
+    second: RogueNight_45
+  - first:
+      213: -6633785945306882718
+    second: RogueNight_46
+  - first:
+      213: -3475801077972688086
+    second: RogueNight_47
+  - first:
+      213: -7931426502719976509
+    second: RogueNight_48
+  - first:
+      213: -3880654757089315831
+    second: RogueNight_49
+  - first:
+      213: 2908473291095855890
+    second: RogueNight_50
+  - first:
+      213: -207484672302726697
+    second: RogueNight_51
+  - first:
+      213: 6170046810758571069
+    second: RogueNight_52
+  - first:
+      213: -6272263614187581449
+    second: RogueNight_53
+  - first:
+      213: -5186451164515975046
+    second: RogueNight_54
+  - first:
+      213: 7293021980692083438
+    second: RogueNight_55
+  - first:
+      213: -6425699253891872325
+    second: RogueNight_56
+  - first:
+      213: 7728379612749256083
+    second: RogueNight_57
+  - first:
+      213: -7360862765738667310
+    second: RogueNight_58
+  - first:
+      213: 4840537809678829784
+    second: RogueNight_59
+  - first:
+      213: 8463019374944323312
+    second: RogueNight_60
+  - first:
+      213: -1548421634917757312
+    second: RogueNight_61
+  - first:
+      213: -3193699164889539071
+    second: RogueNight_62
+  - first:
+      213: -2322591312950369826
+    second: RogueNight_63
+  - first:
+      213: -7871731034185812351
+    second: RogueNight_64
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 24
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RogueNight_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 407
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac1fde2a32a94870800000000000000
+      internalID: 8667637328629406891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 407
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91958de0d970988a0800000000000000
+      internalID: -6302497832387978983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 407
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20fde22b8d4a0e570800000000000000
+      internalID: 8493970147830062850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 407
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f258b6355ccd1150800000000000000
+      internalID: 5845052557759107826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3443d773f8e530a40800000000000000
+      internalID: 5333210352941085763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_5
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d41d742d9be316680800000000000000
+      internalID: -8763654432068480691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_6
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad3f93d0e0755a8d0800000000000000
+      internalID: -2835764672496798758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_7
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e655f2b9c2ddf8840800000000000000
+      internalID: 5228640876052305262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_8
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f36fc3063985ae0800000000000000
+      internalID: -1560335229334962390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_9
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 370
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecf3e4826f935a730800000000000000
+      internalID: 4009674772644249550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73095f39586579a0800000000000000
+      internalID: -6235963376500407426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_11
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dcee17db2b0c06d0800000000000000
+      internalID: -3023028966951818031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_12
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf00127355465740800000000000000
+      internalID: 5140372249388257244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_13
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89ffe003dd8b6d220800000000000000
+      internalID: 2510397102439202712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9862a611345537b10800000000000000
+      internalID: 1978018407889118857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_15
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f75dc74fd805ae0800000000000000
+      internalID: -1562592989491658942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96d434d2b97ecd750800000000000000
+      internalID: 6331189829841407337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_17
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e450655a925a0bf00800000000000000
+      internalID: 1130585104756114766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_18
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb788db0c08f6370800000000000000
+      internalID: 8318008602078510002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_19
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 333
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7ea0c5f212364a70800000000000000
+      internalID: 8810784778010799740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 922e33f480a72bdc0800000000000000
+      internalID: -3624700573972700631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_21
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d1a5354903c0ed0800000000000000
+      internalID: -2446527083957314180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_22
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18ded290c688f9cf0800000000000000
+      internalID: -243325857262867071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_23
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aef83422fb11f070800000000000000
+      internalID: 8138316728438947488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_24
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12e04395da926e80800000000000000
+      internalID: -8186810930516925925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_25
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf78a0ff00a4116b0800000000000000
+      internalID: -5327395516063250437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_26
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37d01225e51dc1c0800000000000000
+      internalID: -4481901980300552390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_27
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21a0a7d4d8ed5f30800000000000000
+      internalID: 4566061598071890219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_28
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 296
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a4eac74af8092630800000000000000
+      internalID: 3902660423132570785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_29
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515e9ca25bc06eb10800000000000000
+      internalID: 2010308255913993493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_30
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5611b894610260c70800000000000000
+      internalID: 8936865790658548069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_31
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f464c8440c506b0800000000000000
+      internalID: -5330643183279386744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_32
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef36e07503978e250800000000000000
+      internalID: 5974158154232914942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17429dc3eb024da10800000000000000
+      internalID: 1933206141485524081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_34
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a320ed0cc3a56970800000000000000
+      internalID: 8747577948038505378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_35
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6431708267e40ed20800000000000000
+      internalID: 3305728395874603846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_36
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f86d34d2f6f824040800000000000000
+      internalID: 4630421074553853583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bed6ed8f7460ffb0800000000000000
+      internalID: -4616079119050416462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_38
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 259
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fb8374231008c90800000000000000
+      internalID: -7169729291318935785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_39
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76072e68e39b4d270800000000000000
+      internalID: 8274442093588541543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_40
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5a6ac2ce7a810e0800000000000000
+      internalID: -2298902976969398879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_41
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f9300d36b4029d0800000000000000
+      internalID: -2801156076160704656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_42
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1129a650622e1360800000000000000
+      internalID: 7142183856222314778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_43
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51b4ce8e574f220800000000000000
+      internalID: 2518767734864156072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_44
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9de1e4f14139d12c0800000000000000
+      internalID: -4459246341393080615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_45
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48808e4d86bd81d60800000000000000
+      internalID: 7861274392870258820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_46
+      rect:
+        serializedVersion: 2
+        x: 350
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26d110e74de00f3a0800000000000000
+      internalID: -6633785945306882718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_47
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a23a48dc55973cfc0800000000000000
+      internalID: -3475801077972688086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_48
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 222
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cbc1474e99ede190800000000000000
+      internalID: -7931426502719976509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 904f2cb1f05252ac0800000000000000
+      internalID: -3880654757089315831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_50
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213da7a6c09fc5820800000000000000
+      internalID: 2908473291095855890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_51
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1ce033acdde1df0800000000000000
+      internalID: -207484672302726697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_52
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34ebc252e860a550800000000000000
+      internalID: 6170046810758571069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_53
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ffcdba897174f8a0800000000000000
+      internalID: -6272263614187581449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_54
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 185
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a704d1615260608b0800000000000000
+      internalID: -5186451164515975046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_55
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 148
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee27442f9d4063560800000000000000
+      internalID: 7293021980692083438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_56
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 148
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb9484ac29453d6a0800000000000000
+      internalID: -6425699253891872325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_57
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 148
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3955a43af48b04b60800000000000000
+      internalID: 7728379612749256083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_58
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 148
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d25fb76056f8d990800000000000000
+      internalID: -7360862765738667310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_59
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 148
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d801cbdd7b0d2340800000000000000
+      internalID: 4840537809678829784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_60
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 111
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f60ec2584fa27570800000000000000
+      internalID: 8463019374944323312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_61
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 111
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e82381ab6e28ae0800000000000000
+      internalID: -1548421634917757312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_62
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 111
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10e1c4dc783bda3d0800000000000000
+      internalID: -3193699164889539071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_63
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 111
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed16f29a18f74cfd0800000000000000
+      internalID: -2322591312950369826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RogueNight_64
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 111
+        width: 50
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186bfe3a45ef1c290800000000000000
+      internalID: -7871731034185812351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
