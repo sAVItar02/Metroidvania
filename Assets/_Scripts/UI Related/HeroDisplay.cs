@@ -23,46 +23,30 @@ public class HeroDisplay : MonoBehaviour
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
 
-    private int currentIndex = 0;
+    [SerializeField] private int currentIndex = 0;
     void Start()
     {
         currentIndex = 0;
-        leftArrow.enabled = false;
         SetDetails(currentIndex);
     }
 
     public void RightShift()
     {
-        currentIndex++;
-        leftArrow.enabled = true;
         if (currentIndex <= info.Length-1)
         {
+            if (currentIndex == info.Length - 1) currentIndex = 0;
+            else currentIndex++;
             SetDetails(currentIndex);
-            if(currentIndex == info.Length-1)
-            {
-                rightArrow.enabled = false;
-            }
-        } else if(currentIndex == info.Length-1 || currentIndex > info.Length-1)
-        {
-            rightArrow.enabled = false;
         }
     }
 
     public void LeftShift()
     {
-        currentIndex--;
-        rightArrow.enabled = true;       
         if (currentIndex >= 0)
         {
+            if (currentIndex == 0) currentIndex = info.Length - 1;
+            else currentIndex--;
             SetDetails(currentIndex);
-            if (currentIndex == 0)
-            {
-                leftArrow.enabled = false;
-            }
-        }
-        else if (currentIndex <= 0)
-        {
-            leftArrow.enabled = false;
         }
     }
 
