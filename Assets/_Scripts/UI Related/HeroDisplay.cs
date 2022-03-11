@@ -22,13 +22,12 @@ public class HeroDisplay : MonoBehaviour
 
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
-
-    [SerializeField] private int currentIndex = 0;
-    void Start()
+    [HideInInspector] public int currentIndex = 0;
+    /*void Start()
     {
         currentIndex = 0;
         SetDetails(currentIndex);
-    }
+    }*/
 
     public void RightShift()
     {
@@ -50,7 +49,7 @@ public class HeroDisplay : MonoBehaviour
         }
     }
 
-    void SetDetails(int index) //sets all the details on the cards
+    public void SetDetails(int index) //sets all the details on the cards
     {
         nameText.text = info[index].HeroName;
         descText.text = info[index].description;

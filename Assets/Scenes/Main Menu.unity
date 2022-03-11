@@ -253,7 +253,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 872272606}
+          m_TargetAssemblyTypeName: HeroSelect, Assembly-CSharp
+          m_MethodName: ClickHero
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 2
+            m_FloatArgument: 0
+            m_StringArgument: Rogue Knight Frame
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &22712020
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -778,7 +794,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &301308253
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2551,13 +2567,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 872272605}
+  - component: {fileID: 872272606}
   m_Layer: 5
   m_Name: Character Select
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &872272605
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2584,6 +2601,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &872272606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 872272604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61c7e76c4dc048443bf51110b4aa1a0b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterInfo: {fileID: 1200323440}
+  characterSelect: {fileID: 872272604}
 --- !u!1 &875034798
 GameObject:
   m_ObjectHideFlags: 0
@@ -3546,7 +3577,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 872272606}
+          m_TargetAssemblyTypeName: HeroSelect, Assembly-CSharp
+          m_MethodName: ClickHero
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Hero Knight Frame
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1059837825
 GameObject:
   m_ObjectHideFlags: 0
@@ -4333,7 +4380,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1200323441
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4384,6 +4431,7 @@ MonoBehaviour:
   animator: {fileID: 358417876}
   leftArrow: {fileID: 1656943401}
   rightArrow: {fileID: 316160740}
+  currentIndex: 0
 --- !u!1 &1214767063
 GameObject:
   m_ObjectHideFlags: 0
@@ -5329,7 +5377,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 872272606}
+          m_TargetAssemblyTypeName: HeroSelect, Assembly-CSharp
+          m_MethodName: ClickHero
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 1
+            m_FloatArgument: 0
+            m_StringArgument: Fire Knight Frame
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1642773359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5633,7 +5697,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Delegates: []
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 872272606}
+          m_TargetAssemblyTypeName: HeroSelect, Assembly-CSharp
+          m_MethodName: ClickHero
+          m_Mode: 3
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 3
+            m_FloatArgument: 0
+            m_StringArgument: Fantasy Knight Frame
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1711478415
 MonoBehaviour:
   m_ObjectHideFlags: 0
