@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb57bc0dca1a93d4094a39fb0872c8a4, type: 3}
+  m_Name: Satoru
+  m_EditorClassIdentifier: 
+  HeroName: Satoru
+  description: As an elite member of the Black Ocean Society, Satoru Hokama was hand-picked
+    at the age of six to join the infamous force. With extensive combat training
+    and ancient meditation techniques, his skills bordered on the mystical.
+  health: 80
+  attackValue: 60
+  level: 0
+  artwork: {fileID: 8667637328629406891, guid: 2badf663c7a2e5b4bb16cb1196c13d32, type: 3}
+  animationController: {fileID: 9100000, guid: fa53bc113515cf54681cc3822c83b640, type: 2}
+  imgWidth: 660
+  imgHeight: 485
+  imgPositionY: 40
