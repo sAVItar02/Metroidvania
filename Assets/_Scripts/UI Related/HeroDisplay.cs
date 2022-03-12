@@ -33,7 +33,6 @@ public class HeroDisplay : MonoBehaviour
     {
         if (currentIndex <= info.Length-1)
         {
-            Debug.Log("Right Shift Fired");
             if (currentIndex == info.Length - 1) currentIndex = 0;
             else currentIndex++;
             SetDetails(currentIndex);
@@ -44,7 +43,6 @@ public class HeroDisplay : MonoBehaviour
     {
         if (currentIndex >= 0)
         {
-            Debug.Log("Left Shift Fired");
             if (currentIndex == 0) currentIndex = info.Length - 1;
             else currentIndex--;
             SetDetails(currentIndex);
