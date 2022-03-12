@@ -17,5 +17,6 @@ public class HeroInfo : ScriptableObject
     public float imgWidth;
     public float imgHeight;
     public float imgPositionY;
-  
+
+    public bool isUnlocked;
 }

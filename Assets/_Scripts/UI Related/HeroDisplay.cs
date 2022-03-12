@@ -22,7 +22,7 @@ public class HeroDisplay : MonoBehaviour
 
     [SerializeField] Image leftArrow;
     [SerializeField] Image rightArrow;
-    [HideInInspector] public int currentIndex = 0;
+    public int currentIndex = 0;
     /*void Start()
     {
         currentIndex = 0;
@@ -33,6 +33,7 @@ public class HeroDisplay : MonoBehaviour
     {
         if (currentIndex <= info.Length-1)
         {
+            Debug.Log("Right Shift Fired");
             if (currentIndex == info.Length - 1) currentIndex = 0;
             else currentIndex++;
             SetDetails(currentIndex);
@@ -43,6 +44,7 @@ public class HeroDisplay : MonoBehaviour
     {
         if (currentIndex >= 0)
         {
+            Debug.Log("Left Shift Fired");
             if (currentIndex == 0) currentIndex = info.Length - 1;
             else currentIndex--;
             SetDetails(currentIndex);
@@ -62,5 +64,10 @@ public class HeroDisplay : MonoBehaviour
         attackText.text = info[index].attackValue.ToString();
         levelText.text = "Level " + info[index].level.ToString();
         animator.runtimeAnimatorController = info[index].animationController;
+    }
+
+    public void SetIndex(int givenIndex) //sets the currentIndex value to the given value
+    {
+        currentIndex = givenIndex;
     }
 }
