@@ -19,4 +19,5 @@ public class HeroInfo : ScriptableObject
     public float imgPositionY;
 
     public bool isUnlocked;
+    public int priceInCoins;
 }

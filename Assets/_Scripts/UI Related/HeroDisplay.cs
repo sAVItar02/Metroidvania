@@ -20,8 +20,8 @@ public class HeroDisplay : MonoBehaviour
 
     [SerializeField] Animator animator;
 
-    [SerializeField] Image leftArrow;
-    [SerializeField] Image rightArrow;
+    [SerializeField] GameObject selectButton;
+    [SerializeField] GameObject buyButton;
     public int currentIndex = 0;
     /*void Start()
     {
@@ -62,6 +62,16 @@ public class HeroDisplay : MonoBehaviour
         attackText.text = info[index].attackValue.ToString();
         levelText.text = "Level " + info[index].level.ToString();
         animator.runtimeAnimatorController = info[index].animationController;
+
+        if (info[index].isUnlocked)
+        {
+            selectButton.SetActive(true);
+            buyButton.SetActive(false);
+        }
+        else { 
+            buyButton.SetActive(true);
+            selectButton.SetActive(false);
+        }
     }
 
     public void SetIndex(int givenIndex) //sets the currentIndex value to the given value
