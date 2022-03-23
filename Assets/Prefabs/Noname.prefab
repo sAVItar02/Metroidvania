@@ -20222,11 +20222,11 @@ GameObject:
   - component: {fileID: 8626677462030336173}
   - component: {fileID: 419433400450691760}
   - component: {fileID: 1138296606}
-  - component: {fileID: 2034282541}
   - component: {fileID: 5473523056609539969}
   - component: {fileID: 2034282549}
   - component: {fileID: 2905981256784530575}
   - component: {fileID: 1066635535}
+  - component: {fileID: 1018092877}
   m_Layer: 8
   m_Name: Noname
   m_TagString: Player
@@ -20364,38 +20364,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2034282541
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8626677462030336175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17c581475e8bcad44ab32b1805ce3145, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  jumpForce: 10
-  coyoteTime: 0.1
-  jumpBufferTime: 0.2
-  rollSpeed: 10
-  startRollTime: 0.1
-  slideSpeed: -1
-  xWallForce: 5
-  yWallForce: 10
-  wallJumpTime: 0.2
-  maxHealth: 100
-  currentHealth: 0
-  isDead: 0
-  isAttacking: 0
-  walkParticles: {fileID: 973838985}
-  jumpParticles: {fileID: 2046501760}
-  landParticles: {fileID: 1984574228}
-  slideParticles: {fileID: 6003980}
-  boxLength: 1
-  boxWidth: 0.5
 --- !u!114 &5473523056609539969
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20475,3 +20443,33 @@ MonoBehaviour:
   chipSpeed: 2
   frontHealthBar: {fileID: 2028683357}
   backHealthBar: {fileID: 545008647}
+--- !u!114 &1018092877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626677462030336175}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d2607078e5d2614eac464cfb16d7716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  jumpForce: 10
+  coyoteTime: 0.1
+  jumpBufferTime: 0.2
+  maxHealth: 100
+  currentHealth: 0
+  isDead: 0
+  isAttacking: 0
+  walkParticles: {fileID: 973838985}
+  jumpParticles: {fileID: 2046501760}
+  landParticles: {fileID: 1984574228}
+  slideParticles: {fileID: 6003980}
+  boxLength: 1
+  boxWidth: 0.5
+  slideSpeed: -1
+  xWallForce: 8
+  yWallForce: 8
+  wallJumpTime: 0.1

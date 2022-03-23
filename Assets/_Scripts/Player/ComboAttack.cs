@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ComboAttack : MonoBehaviour
 {
+    #region
     private Animator playerAnimator;
     [SerializeField] int noOfClicks = 0;
     [SerializeField] float maxComboDelay = 0.9f;
@@ -25,6 +26,7 @@ public class ComboAttack : MonoBehaviour
     [Header("Secondary Attack")]
     [SerializeField] GameObject fireball;
     [SerializeField] Transform firePoint;
+    #endregion
     void Start()
     {
         playerAnimator = GetComponent<Animator>();

@@ -6,45 +6,40 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
     public static PlayerController Instance { get; private set; }
-    private float moveInput;
-    private Rigidbody2D playerRigidbody;
-    private Animator playerAnimator;
-    private PlayerCollision coll;
-    private PlayerHealth healthCanvas;
+    protected float moveInput;
+    protected Rigidbody2D playerRigidbody;
+    protected Animator playerAnimator;
+    protected PlayerCollision coll;
+    protected PlayerHealth healthCanvas;
 
     [Header("Jump and Move")]
-    [SerializeField] float speed = 10f;
-    [SerializeField] float jumpForce = 20f;
-    [SerializeField] float coyoteTime = 0.2f;
-    [SerializeField] float jumpBufferTime = 0.2f;
-    float coyoteTimeCounter;
-    float jumpBufferCounter;
+    [SerializeField] protected float speed = 10f;
+    [SerializeField] protected float jumpForce = 20f;
+    [SerializeField] protected float coyoteTime = 0.2f;
+    [SerializeField] protected float jumpBufferTime = 0.2f;
+    protected float coyoteTimeCounter;
+    protected float jumpBufferCounter;
 
-    [Space]
+    /*[Space]
     [Header("Rolling")]
     [SerializeField] float rollSpeed = 10f;
     float rollTime;
-    [SerializeField] float startRollTime;
+    [SerializeField] float startRollTime;*/
 
-    [Space]
-    [Header("Wall Jumping and Sliding")]
-    [SerializeField] float slideSpeed = -1f;
-    [SerializeField] float xWallForce;
-    [SerializeField] float yWallForce;
-    [SerializeField] float wallJumpTime;
+    
     [Space]
     [Header("Health Params")]
-    [SerializeField] int maxHealth = 100;
-    [SerializeField] int currentHealth;
+    [SerializeField] protected int maxHealth = 100;
+    [SerializeField] protected int currentHealth;
 
 
     [Space]
     [Header("Bools")]
-    bool isRunning;
-    bool isWallJumping;
-    bool isWallSliding;
-    bool wasOnGround;
-    bool isFacingRight = true;
+    protected bool isRunning;
+    protected bool isWallJumping;
+    protected bool isWallSliding;
+    protected bool wasOnGround;
+    protected bool isFacingRight = true;
     public bool isDead = false;
     [HideInInspector] public bool isAttacking;
 
@@ -57,8 +52,8 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     [Header("Interactables")]
-    [SerializeField] private float boxLength = 1f;
-    [SerializeField] private float boxWidth = 1f;
+    [SerializeField] protected float boxLength = 1f;
+    [SerializeField] protected float boxWidth = 1f;
     #endregion
 
 
@@ -69,7 +64,6 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         coll = GetComponent<PlayerCollision>();
         healthCanvas = GetComponent<PlayerHealth>();
-        rollTime = startRollTime;
 
         currentHealth = maxHealth;
         isDead = false;
@@ -81,19 +75,16 @@ public class PlayerController : MonoBehaviour
         { 
             CheckInput();
             Run();
-            //FlipSprite();
-            //HandleRoll();
             HandleJump();
         }
         CheckFall();
         CheckJump();
-        HandleWallSlide();
         UpdateAnimations();
 
-        if(moveInput < 0 && isFacingRight)
+        if(moveInput < 0 && isFacingRight && !isAttacking)
         {
             FlipSprite();
-        } else if( moveInput > 0 && !isFacingRight)
+        } else if( moveInput > 0 && !isFacingRight && !isAttacking)
         {
             FlipSprite();
         }
@@ -111,31 +102,12 @@ public class PlayerController : MonoBehaviour
             CheckInteraction();
     }
 
-    void CheckInput()
+    protected void CheckInput()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
     }
 
-   /* void HandleRoll()
-    {
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !isRunning)
-        {
-            bool isFacingRight = playerRigidbody.transform.localScale.x == 1 ? true : false;
-            if (isFacingRight)
-            {
-                //playerRigidbody.AddForce(Vector2.right * rollSpeed, ForceMode2D.Impulse);
-                playerAnimator.SetTrigger("Roll");
-                playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x * 12 + rollSpeed, playerRigidbody.velocity.y);
-            }
-            else
-            {
-                playerRigidbody.velocity += Vector2.left * rollSpeed;
-                playerAnimator.SetTrigger("Roll");
-            }
-        }
-    }*/
-
-    void HandleJump()
+    protected void HandleJump()
     {
         //Handle Coyote Time
         if (coll.isOnGround)
@@ -158,7 +130,7 @@ public class PlayerController : MonoBehaviour
         }
 
         //Handle Jump
-        if (jumpBufferCounter >= 0f && coyoteTimeCounter > 0f)
+        if (jumpBufferCounter >= 0f && coyoteTimeCounter > 0f && !isAttacking)
         {
             playerRigidbody.velocity += Vector2.up * jumpForce;
             playJumpParticles();
@@ -171,7 +143,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void Run()
+    protected void Run()
     {
         if(isAttacking)
         {
@@ -187,33 +159,7 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    void HandleWallSlide()
-    {
-        //Handle wall slide
-        if (coll.isTouchingWall && !coll.isOnGround && playerRigidbody.velocity.y < 0 && moveInput != 0)
-        {
-            isWallSliding = true;
-        }
-        else { isWallSliding = false; }
-
-        if (isWallSliding)
-        {
-            playerRigidbody.velocity = new Vector2(playerRigidbody.velocity.x, slideSpeed);
-            playerAnimator.SetTrigger("isWallSliding");
-        }
-
-        //Handle wall jump
-        if (Input.GetButtonDown("Jump") && isWallSliding)
-        {
-            isWallJumping = true;
-            Invoke("SetWallJumpingFalse", wallJumpTime);
-        }
-
-        if (isWallJumping)
-        {
-            playerRigidbody.velocity = new Vector2(xWallForce * -moveInput, yWallForce);
-        }
-    }
+    
 
     public void TakeDamage(int damage)
     {
@@ -236,20 +182,19 @@ public class PlayerController : MonoBehaviour
         CinemachineShake.Instance.ShakeCamera(5f, 0.2f);
     }
 
-    private void UpdateAnimations()
+    protected virtual void UpdateAnimations()
     {
-        playerAnimator.SetBool("isWallSliding", isWallSliding);
         playerAnimator.SetBool("isRunning", isRunning);
     }
 
-    void FlipSprite()
+    protected void FlipSprite()
     {
         isFacingRight = !isFacingRight;
         transform.Rotate(0f, 180f, 0f);
     }
 
     //Handle Jump Anim
-    void CheckJump()
+    protected void CheckJump()
     {
         if (!coll.isOnGround && playerRigidbody.velocity.y > 0)
         {
@@ -264,7 +209,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //Handle Falling Animation
-    void CheckFall()
+    protected void CheckFall()
     {
         if(!coll.isOnGround && playerRigidbody.velocity.y < 0 && !coll.isTouchingWall)
         {
@@ -280,11 +225,6 @@ public class PlayerController : MonoBehaviour
     {
         return (moveInput == 0 && coll.isOnGround && !isWallSliding && !isWallJumping);
     }
-    void SetWallJumpingFalse()
-    {
-        isWallJumping = false;
-    }
-
     public void playWalkParticles()
     {
         walkParticles.Play();
@@ -305,7 +245,7 @@ public class PlayerController : MonoBehaviour
 
 
     //---------INTERACTABLES-------------
-    private void CheckInteraction()
+    protected void CheckInteraction()
     {
         RaycastHit2D[] hits = Physics2D.BoxCastAll(new Vector2(transform.position.x, transform.position.y + 0.5f), new Vector2(boxWidth, boxLength), 0, Vector2.zero);
 
@@ -322,7 +262,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnDrawGizmos()
+    protected void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(new Vector2(transform.position.x, transform.position.y + 0.5f), new Vector2(boxWidth, boxLength));
