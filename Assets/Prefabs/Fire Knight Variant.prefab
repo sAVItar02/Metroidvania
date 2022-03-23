@@ -41,11 +41,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 802738129, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.96
+      value: 0.72
       objectReference: {fileID: 0}
     - target: {fileID: 802738129, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.19
+      value: 0.85
       objectReference: {fileID: 0}
     - target: {fileID: 419433400450691760, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_Size.x
@@ -69,7 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 7215336929182527290, guid: 582376476c7aba3478f8f2ce4a9073c3, type: 3}
     - target: {fileID: 2905981256784530575, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: attackRange
-      value: 1.15
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2905981256784530575, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
+      propertyPath: secondaryAttkTimeDelay
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8626677462030336146, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_RootOrder
@@ -137,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 2d68fa907313513499f8426abf548dc5, type: 2}
     - target: {fileID: 8626677462030336175, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_Name
-      value: Fire Knight Variant
+      value: Fire Knight
       objectReference: {fileID: 0}
     - target: {fileID: 8626677462030336175, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
       propertyPath: m_IsActive

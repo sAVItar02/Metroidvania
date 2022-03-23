@@ -163,9 +163,12 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
-        playerAnimator.SetTrigger("Hurt");
-        healthCanvas.TakeDamage(damage);
+        if(!isAttacking)  // Doubtful
+        {
+            currentHealth -= damage;
+            playerAnimator.SetTrigger("Hurt");
+            healthCanvas.TakeDamage(damage);
+        }
 
         if (currentHealth <= 0)
         {
