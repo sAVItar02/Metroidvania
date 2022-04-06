@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class HeroDisplay : MonoBehaviour
 {
@@ -84,6 +85,11 @@ public class HeroDisplay : MonoBehaviour
     public void SetIndex(int givenIndex) //sets the currentIndex value to the given value
     {
         currentIndex = givenIndex;
+    }
+
+    public void LoadNextScene()
+    {
+        SceneManager.LoadScene(1);
     }
 
 }

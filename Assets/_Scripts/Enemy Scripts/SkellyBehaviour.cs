@@ -57,6 +57,10 @@ public class SkellyBehaviour : MonoBehaviour
         anim = GetComponent<Animator>();
         renderer = GetComponent<SpriteRenderer>();
         SelectTarget();
+    }
+
+    private void Start()
+    {
         expTracker = GameObject.FindGameObjectWithTag("Player");
     }
 

@@ -6787,7 +6787,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1920722743}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1200323442}
+        m_TargetAssemblyTypeName: HeroDisplay, Assembly-CSharp
+        m_MethodName: LoadNextScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1920722743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7039,5 +7051,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1729223930793399686, guid: 889c288f8afd39c4895b552043f3c919, type: 3}
+      propertyPath: heroes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1729223930793399686, guid: 889c288f8afd39c4895b552043f3c919, type: 3}
+      propertyPath: heroes.Array.data[0]
+      value: 
+      objectReference: {fileID: 8626677462030336175, guid: cb92753e1eb47cd4b9c02f6cb65e47f9, type: 3}
+    - target: {fileID: 1729223930793399686, guid: 889c288f8afd39c4895b552043f3c919, type: 3}
+      propertyPath: heroes.Array.data[1]
+      value: 
+      objectReference: {fileID: 763798585411408518, guid: d52a56bfbbe90bc4ca31c73a23c872a4, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 889c288f8afd39c4895b552043f3c919, type: 3}
