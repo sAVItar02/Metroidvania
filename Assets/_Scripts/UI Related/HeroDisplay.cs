@@ -19,17 +19,16 @@ public class HeroDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI attackText;
     [SerializeField] TextMeshProUGUI levelText;
+    [SerializeField] TextMeshProUGUI priceText;
 
     [SerializeField] Animator animator;
 
     [SerializeField] GameObject selectButton;
     [SerializeField] GameObject buyButton;
+    [SerializeField] GameObject priceField;
+
     public int currentIndex = 0;
-    /*void Start()
-    {
-        currentIndex = 0;
-        SetDetails(currentIndex);
-    }*/
+ 
 
     public void RightShift()
     {
@@ -64,6 +63,17 @@ public class HeroDisplay : MonoBehaviour
         attackText.text = info[index].attackValue.ToString();
         levelText.text = "Level " + info[index].level.ToString();
         animator.runtimeAnimatorController = info[index].animationController;
+
+        if(info[index].priceInCoins != 0)
+        {
+            priceField.SetActive(true);
+            priceText.text = info[index].priceInCoins.ToString();
+        }
+
+        if(info[index].priceInCoins == 0)
+        {
+            priceField.SetActive(false);
+        }
 
         if (info[index].isUnlocked)
         {

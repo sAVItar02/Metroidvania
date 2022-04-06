@@ -9,6 +9,8 @@ public class GameController : MonoBehaviour
     [SerializeField] GameSession gameSession;
     [SerializeField] GameObject[] heroes;
 
+    public int totalCoins;
+
     private GameObject spawnPoint;
     private CinemachineVirtualCamera cam;
     void Awake()
