@@ -7,6 +7,7 @@ using TMPro;
 public class HeroDisplay : MonoBehaviour
 {
     [SerializeField] HeroInfo []info;
+    [SerializeField] GameSession gameSession;
 
     [SerializeField] TextMeshProUGUI nameText;
     [SerializeField] TextMeshProUGUI descText;
@@ -66,6 +67,7 @@ public class HeroDisplay : MonoBehaviour
         if (info[index].isUnlocked)
         {
             selectButton.SetActive(true);
+            selectButton.GetComponent<Button>().onClick.AddListener(customListener);
             buyButton.SetActive(false);
         }
         else { 
@@ -74,8 +76,14 @@ public class HeroDisplay : MonoBehaviour
         }
     }
 
+    void customListener()
+    {
+        gameSession.selectedHero = currentIndex;
+    }
+
     public void SetIndex(int givenIndex) //sets the currentIndex value to the given value
     {
         currentIndex = givenIndex;
     }
+
 }

@@ -37,8 +37,8 @@ public class HeroSelect : MonoBehaviour
         characterInfo.GetComponent<HeroDisplay>().SetDetails(index);
     }
 
-    public void Print(string msg)
+/*    public void Print(string msg)
     {
         Debug.Log(msg);
-    }
+    }*/
 }
