@@ -24,3 +24,5 @@ MonoBehaviour:
   imgWidth: 660
   imgHeight: 485
   imgPositionY: 40
+  isUnlocked: 0
+  priceInCoins: 2000
