@@ -9,6 +9,12 @@ public class PickupHandler : MonoBehaviour
     //public int healthPotionProb = 5;
 
     [SerializeField] typeOfPickup pickup;
+
+    private GameController game;
+    private void Start()
+    {
+        game = FindObjectOfType<GameController>();
+    }
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,6 +34,7 @@ public class PickupHandler : MonoBehaviour
             switch (pickup) {
                 case typeOfPickup.coin:
                     Debug.Log("Coin picked");
+                    game.totalCoins += 20;
                     Destroy(gameObject);
                     break;
                 case typeOfPickup.healthPotion:

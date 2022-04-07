@@ -1,11 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class HeroSelect : MonoBehaviour
 {
     [SerializeField] GameObject characterInfo;
     [SerializeField] GameObject characterSelect;
+    [SerializeField] TextMeshProUGUI totalCoins;
+
+    void Start()
+    {
+        GameController game = FindObjectOfType<GameController>();
+        totalCoins.text = game.totalCoins.ToString();
+    }
+
 
     public void ClickHero(int index)
     {

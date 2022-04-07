@@ -20,6 +20,7 @@ public class HeroDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI attackText;
     [SerializeField] TextMeshProUGUI levelText;
     [SerializeField] TextMeshProUGUI priceText;
+    [SerializeField] TextMeshProUGUI totalCoins;
 
     [SerializeField] Animator animator;
 
@@ -28,7 +29,13 @@ public class HeroDisplay : MonoBehaviour
     [SerializeField] GameObject priceField;
 
     public int currentIndex = 0;
- 
+
+    void Start()
+    {
+        GameController game = FindObjectOfType<GameController>();
+        totalCoins.text =  game.totalCoins.ToString();
+    }
+
 
     public void RightShift()
     {
