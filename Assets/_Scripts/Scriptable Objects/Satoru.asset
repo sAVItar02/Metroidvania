@@ -19,6 +19,7 @@ MonoBehaviour:
   health: 80
   attackValue: 60
   level: 0
+  exp: 0
   artwork: {fileID: 8667637328629406891, guid: 2badf663c7a2e5b4bb16cb1196c13d32, type: 3}
   animationController: {fileID: 9100000, guid: fa53bc113515cf54681cc3822c83b640, type: 2}
   imgWidth: 660

@@ -113,9 +113,12 @@ public class HeroDisplay : MonoBehaviour
 
     public void buyHero()
     {
-        info[currentIndex].isUnlocked = true;
-        game.totalCoins -= info[currentIndex].priceInCoins;
-        totalCoins.text = game.totalCoins.ToString();
-        SetDetails(currentIndex);
+        if(game.totalCoins >= info[currentIndex].priceInCoins)
+        {
+            info[currentIndex].isUnlocked = true;
+            game.totalCoins -= info[currentIndex].priceInCoins;
+            totalCoins.text = game.totalCoins.ToString();
+            SetDetails(currentIndex);
+        }
     }
 }

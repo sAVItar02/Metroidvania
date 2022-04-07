@@ -11,6 +11,7 @@ public class HeroInfo : ScriptableObject
     public int health;
     public int attackValue;
     public int level;
+    public int exp;
 
     public Sprite artwork;
     public RuntimeAnimatorController animationController;
