@@ -30,9 +30,11 @@ public class HeroDisplay : MonoBehaviour
 
     public int currentIndex = 0;
 
+    private GameController game;
+
     void Start()
     {
-        GameController game = FindObjectOfType<GameController>();
+        game = FindObjectOfType<GameController>();
         totalCoins.text =  game.totalCoins.ToString();
     }
 
@@ -109,4 +111,11 @@ public class HeroDisplay : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    public void buyHero()
+    {
+        info[currentIndex].isUnlocked = true;
+        game.totalCoins -= info[currentIndex].priceInCoins;
+        totalCoins.text = game.totalCoins.ToString();
+        SetDetails(currentIndex);
+    }
 }

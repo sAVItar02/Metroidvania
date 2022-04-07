@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a3e97aa883d11f48bcbd2422c6f79cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthPotionProb: 5
   pickup: 0
+  gameSession: {fileID: 11400000, guid: 3fa6e074c11d7184aafcff1e0faaf8c3, type: 2}
 --- !u!96 &6724805444821331749
 TrailRenderer:
   serializedVersion: 2

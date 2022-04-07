@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PickupHandler : MonoBehaviour
 {
     #region Variables
@@ -9,32 +9,27 @@ public class PickupHandler : MonoBehaviour
     //public int healthPotionProb = 5;
 
     [SerializeField] typeOfPickup pickup;
+    [SerializeField] GameSession gameSession;
 
     private GameController game;
+    private MainCanvas mainCanvas;
     private void Start()
     {
         game = FindObjectOfType<GameController>();
+        mainCanvas = FindObjectOfType<MainCanvas>();
     }
     #endregion
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
-        {
-            /*if (pickup == typeOfPickup.coin)
-            {
-                Debug.Log("Coin picked");
-                Destroy(gameObject);
-            } else if (pickup == typeOfPickup.healthPotion)
-            {
-                Debug.Log("Potion picked");
-                Destroy(gameObject);
-            }*/
-
+        { 
             switch (pickup) {
                 case typeOfPickup.coin:
                     Debug.Log("Coin picked");
                     game.totalCoins += 20;
+                    gameSession.coinsInCurrentLevel += 20;
+                    mainCanvas.coinsText.text = gameSession.coinsInCurrentLevel.ToString();
                     Destroy(gameObject);
                     break;
                 case typeOfPickup.healthPotion:

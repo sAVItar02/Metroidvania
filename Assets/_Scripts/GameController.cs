@@ -9,7 +9,7 @@ public class GameController : MonoBehaviour
     [SerializeField] GameSession gameSession;
     [SerializeField] GameObject[] heroes;
 
-    public int totalCoins = 0;
+    public int totalCoins = 2000;
 
     private GameObject spawnPoint;
     private CinemachineVirtualCamera cam;
@@ -29,27 +29,17 @@ public class GameController : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if(scene.name == "Level 1")
+        if(scene.name != "Main Menu")
         {
             spawnPoint = GameObject.Find("Spawn Point");
             cam = FindObjectOfType<CinemachineVirtualCamera>();
             var instantiated =  Instantiate(heroes[gameSession.selectedHero], spawnPoint.transform.position, Quaternion.identity);
             cam.Follow = instantiated.transform;
-            
-
+            gameSession.coinsInCurrentLevel = 0;
+            gameSession.expInCurrentLevel = 0;
         }
     }
-    /*private void Start()
-    {
-        string currentScene = SceneManager.GetActiveScene().name;
-        Debug.Log(currentScene);
-
-        if(currentScene == "Level 1")
-        {
-            spawnPoint = GameObject.Find("Spawn Point");
-            Instantiate(heroes[gameSession.selectedHero], spawnPoint.transform.position, Quaternion.identity);
-        }
-    }*/
+    
     void Update()
     {
         
