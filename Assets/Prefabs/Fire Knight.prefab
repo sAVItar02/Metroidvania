@@ -191,7 +191,7 @@ MonoBehaviour:
   jumpForce: 10
   coyoteTime: 0.1
   jumpBufferTime: 0.2
-  maxHealth: 100
+  maxHealth: 150
   currentHealth: 0
   isDead: 0
   isAttacking: 0

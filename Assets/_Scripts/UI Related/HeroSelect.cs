@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class HeroSelect : MonoBehaviour
 {
     [SerializeField] GameObject characterInfo;
     [SerializeField] GameObject characterSelect;
     [SerializeField] TextMeshProUGUI totalCoins;
+    [SerializeField] AudioManager audioManager;
 
     void Start()
     {
@@ -18,6 +20,7 @@ public class HeroSelect : MonoBehaviour
 
     public void ClickHero(int index)
     {
+        audioManager.PlayClickSound();
         switch (index)
         {
             case 0:
@@ -46,6 +49,16 @@ public class HeroSelect : MonoBehaviour
         characterInfo.GetComponent<HeroDisplay>().SetDetails(index);
     }
 
+    public void playHoverSound(Image characterImg)
+    {
+        audioManager.PlayHoverSound();
+        characterImg.color = new Color(255, 255, 255);
+    }
+
+    public void PointerExit(Image characterImg)
+    {
+        characterImg.color = new Color(0, 0, 0);
+    }
 /*    public void Print(string msg)
     {
         Debug.Log(msg);

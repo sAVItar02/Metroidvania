@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     
     [Space]
     [Header("Health Params")]
-    [SerializeField] protected int maxHealth = 100;
+    [SerializeField] public int maxHealth = 100;
     [SerializeField] protected int currentHealth;
 
 

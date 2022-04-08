@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
+        maxHealth = FindObjectOfType<PlayerController>().maxHealth;
         health = maxHealth;
     }
 

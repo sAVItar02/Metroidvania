@@ -23,6 +23,7 @@ public class HeroDisplay : MonoBehaviour
     [SerializeField] TextMeshProUGUI totalCoins;
 
     [SerializeField] Animator animator;
+    [SerializeField] AnimationClip arrowAnimation;
 
     [SerializeField] GameObject selectButton;
     [SerializeField] GameObject buyButton;
@@ -121,4 +122,6 @@ public class HeroDisplay : MonoBehaviour
             SetDetails(currentIndex);
         }
     }
+
+ 
 }
