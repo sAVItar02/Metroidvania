@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7215336928340503913}
   - component: {fileID: 7215336928340503918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2008052994}
   - component: {fileID: 2008052993}
   - component: {fileID: 3161728135915880301}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Fire Column
   m_TagString: Untagged
   m_Icon: {fileID: 0}

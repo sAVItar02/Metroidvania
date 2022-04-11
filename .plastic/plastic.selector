@@ -1,0 +1,3 @@
+rep "GameProg Project (Metroidvania)@GameProg_Project@cloud"
+  path "/"
+    smartbranch "/main"
