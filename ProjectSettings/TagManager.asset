@@ -25,7 +25,7 @@ TagManager:
   - Interactables
   - Shootables
   - Traps
-  - 
+  - Background
   - 
   - 
   - 
@@ -51,6 +51,12 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 2276949201
+    locked: 0
+  - name: Decor
+    uniqueID: 2705578767
+    locked: 0
+  - name: Traps
+    uniqueID: 1117374067
     locked: 0
   - name: Interactables
     uniqueID: 2479288521

@@ -26,7 +26,6 @@ public class PickupHandler : MonoBehaviour
         { 
             switch (pickup) {
                 case typeOfPickup.coin:
-                    Debug.Log("Coin picked");
                     game.totalCoins += 20;
                     gameSession.coinsInCurrentLevel += 20;
                     mainCanvas.coinsText.text = gameSession.coinsInCurrentLevel.ToString();

@@ -71,6 +71,7 @@ public class ComboAttack : MonoBehaviour
     public void Attack()
     {
         PlayerController.Instance.isAttacking = true;
+        PlayerController.Instance.audio.PlayOneShot(PlayerController.Instance.clips[1]);
         //Check for enemies
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
         damageToDeal = 20;
@@ -105,6 +106,7 @@ public class ComboAttack : MonoBehaviour
 
     public void SecondaryAttack()
     {
+        PlayerController.Instance.audio.PlayOneShot(PlayerController.Instance.clips[4]);
         Instantiate(fireball, firePoint.position, firePoint.rotation);
     }
 
@@ -115,6 +117,7 @@ public class ComboAttack : MonoBehaviour
         {
             playerAnimator.SetBool("Attack2", true);
             PlayerController.Instance.isAttacking = true;
+            PlayerController.Instance.audio.PlayOneShot(PlayerController.Instance.clips[2]);
         } else
         {
             PlayerController.Instance.isAttacking = false;
@@ -129,6 +132,7 @@ public class ComboAttack : MonoBehaviour
         {
             playerAnimator.SetBool("Attack3", true);
             PlayerController.Instance.isAttacking = true;
+            PlayerController.Instance.audio.PlayOneShot(PlayerController.Instance.clips[3]);
         }
         else
         {

@@ -195,6 +195,7 @@ public class SkellyBehaviour : MonoBehaviour
         currentHealth -= damage;
         enemyHealthBar.SetHealth(currentHealth, maxHealth);
         anim.SetTrigger("Hurt");
+        GetComponent<AudioSource>().Play();
         if (damageText)
         {
             ShowDamageText(damage);

@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     protected Animator playerAnimator;
     protected PlayerCollision coll;
     protected PlayerHealth healthCanvas;
+    public AudioSource audio;
 
     [Header("Jump and Move")]
     [SerializeField] protected float speed = 10f;
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem landParticles;
     [SerializeField] ParticleSystem slideParticles;
 
+    public AudioClip[] clips;
+
     [Space]
     [Header("Interactables")]
     [SerializeField] protected float boxLength = 1f;
@@ -64,6 +67,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator = GetComponent<Animator>();
         coll = GetComponent<PlayerCollision>();
         healthCanvas = GetComponent<PlayerHealth>();
+        audio = GetComponent<AudioSource>();
 
         currentHealth = maxHealth;
         isDead = false;
@@ -165,6 +169,7 @@ public class PlayerController : MonoBehaviour
     {
         if(!isAttacking)  // Doubtful
         {
+            audio.PlayOneShot(clips[6]);
             currentHealth -= damage;
             playerAnimator.SetTrigger("Hurt");
             healthCanvas.TakeDamage(damage);
@@ -178,6 +183,7 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
+        audio.PlayOneShot(clips[5]);
         playerRigidbody.bodyType = RigidbodyType2D.Static;
         GetComponent<Collider2D>().enabled = false;
         isDead = true;
@@ -231,6 +237,7 @@ public class PlayerController : MonoBehaviour
     public void playWalkParticles()
     {
         walkParticles.Play();
+        audio.PlayOneShot(clips[0]);
     }
 
     public void playLandParticles()
@@ -244,6 +251,18 @@ public class PlayerController : MonoBehaviour
     public void playJumpParticles()
     {
         jumpParticles.Play();
+    }
+    public void playWalkAudio()
+    {
+        audio.PlayOneShot(clips[0], 0.02f);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Coin"))
+        {
+            audio.PlayOneShot(clips[7]);
+        } 
     }
 
 

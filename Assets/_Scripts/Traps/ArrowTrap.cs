@@ -32,5 +32,6 @@ public class ArrowTrap : MonoBehaviour
     public void spawnArrow()
     {
         Instantiate(arrow, spawnLocation.transform.position, Quaternion.identity);
+        GetComponent<AudioSource>().Play();
     }
 }
